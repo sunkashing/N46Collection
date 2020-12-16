@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>N46Collection.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>arm64</string>
+			</array>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>28E4350C429C4DBA788545F43B5D4D0E3AC6C0CF</string>
+				<key>dateExpires</key>
+				<string>6/21/21</string>
+				<key>type</key>
+				<string>iOS Distribution</string>
+			</dict>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>TTV52MA58C.com.idealtechnology.miniapp</string>
+				<key>com.apple.developer.team-identifier</key>
+				<string>TTV52MA58C</string>
+				<key>get-task-allow</key>
+				<false/>
+				<key>keychain-access-groups</key>
+				<array>
+					<string>TTV52MA58C.com.idealtechnology.miniapp</string>
+				</array>
+			</dict>
+			<key>name</key>
+			<string>N46Collection.app</string>
+			<key>profile</key>
+			<dict>
+				<key>UUID</key>
+				<string>54033815-0b5e-444c-b427-147b154d333f</string>
+				<key>name</key>
+				<string>miniadhoc</string>
+			</dict>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>TTV52MA58C</string>
+				<key>name</key>
+				<string>Ziyang Wang</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>

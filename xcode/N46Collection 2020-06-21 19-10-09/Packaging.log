@@ -1,0 +1,141 @@
+2020-06-21 23:10:03 +0000  Initial pipeline context: <IDEDistributionProcessingPipelineContext: 0x7fc1bb0c2910; archive(resolved)='<IDEArchive: 0x7fc1bb65d6a0>', distributionTask(resolved)='2', distributionDestination(resolved)='1', distributionMethod(resolved)='<IDEDistributionMethodiOSAppStoreDistribution: 0x7fc1bb4255e0>', team(resolved)='<IDEProvisioningDisambiguatableBasicTeam: 0x7fc1bc3bdd40; teamID='TTV52MA58C', teamName='Ziyang Wang', teamType='(null)', username='(null)', isFreeProvisioningTeam='0'>'>
+	Chain (12, self inclusive):
+	<IDEDistributionProcessingPipelineContext: 0x7fc1bb0c2910; archive = '<IDEArchive: 0x7fc1bb65d6a0>', distributionMethod='<IDEDistributionMethodiOSAppStoreDistribution: 0x7fc1bb4255e0>', team='<IDEProvisioningDisambiguatableBasicTeam: 0x7fc1bc3bdd40; teamID='TTV52MA58C', teamName='Ziyang Wang', teamType='(null)', username='(null)', isFreeProvisioningTeam='0'>'>
+	<IDEDistributionProcessingPipelineContext: 0x7fc1bb2c9600; archive = '<IDEArchive: 0x7fc1bb65d6a0>', distributionMethod='<IDEDistributionMethodiOSAppStoreDistribution: 0x7fc1bb4255e0>', team='<IDEProvisioningDisambiguatableBasicTeam: 0x7fc1bc3bdd40; teamID='TTV52MA58C', teamName='Ziyang Wang', teamType='(null)', username='(null)', isFreeProvisioningTeam='0'>'>
+	<IDEDistributionContext: 0x7fc1bb704c40; archive = '<IDEArchive: 0x7fc1bb65d6a0>', distributionMethod='<IDEDistributionMethodiOSAppStoreDistribution: 0x7fc1bb4255e0>', team='<IDEProvisioningDisambiguatableBasicTeam: 0x7fc1bc3bdd40; teamID='TTV52MA58C', teamName='Ziyang Wang', teamType='(null)', username='(null)', isFreeProvisioningTeam='0'>'>
+	<IDEDistributionContext: 0x7fc1bb0e2350; archive = '<IDEArchive: 0x7fc1bb65d6a0>', distributionMethod='<IDEDistributionMethodiOSAppStoreDistribution: 0x7fc1bb4255e0>', team='<IDEProvisioningDisambiguatableBasicTeam: 0x7fc1bc3bdd40; teamID='TTV52MA58C', teamName='Ziyang Wang', teamType='(null)', username='(null)', isFreeProvisioningTeam='0'>'>
+	<IDEDistributionContext: 0x7fc1bc747310; archive = '<IDEArchive: 0x7fc1bb65d6a0>', distributionMethod='<IDEDistributionMethodiOSAppStoreDistribution: 0x7fc1bb4255e0>', team='<IDEProvisioningDisambiguatableBasicTeam: 0x7fc1bc3bdd40; teamID='TTV52MA58C', teamName='Ziyang Wang', teamType='(null)', username='(null)', isFreeProvisioningTeam='0'>'>
+	<IDEDistributionContext: 0x7fc1bb252c10; archive = '<IDEArchive: 0x7fc1bb65d6a0>', distributionMethod='<IDEDistributionMethodiOSAppStoreDistribution: 0x7fc1bb4255e0>', team='<IDEProvisioningDisambiguatableBasicTeam: 0x7fc1bc3bdd40; teamID='TTV52MA58C', teamName='Ziyang Wang', teamType='(null)', username='(null)', isFreeProvisioningTeam='0'>'>
+	<IDEDistributionContext: 0x7fc1bc339540; archive = '<IDEArchive: 0x7fc1bb65d6a0>', distributionMethod='<IDEDistributionMethodiOSAppStoreDistribution: 0x7fc1bb4255e0>', team='<IDEProvisioningDisambiguatableBasicTeam: 0x7fc1bc3bdd40; teamID='TTV52MA58C', teamName='Ziyang Wang', teamType='(null)', username='(null)', isFreeProvisioningTeam='0'>'>
+	<IDEDistributionContext: 0x7fc1bc334600; archive = '<IDEArchive: 0x7fc1bb65d6a0>', distributionMethod='<IDEDistributionMethodiOSAppStoreDistribution: 0x7fc1bb4255e0>', team='<IDEProvisioningDisambiguatableBasicTeam: 0x7fc1bc3bdd40; teamID='TTV52MA58C', teamName='Ziyang Wang', teamType='(null)', username='(null)', isFreeProvisioningTeam='0'>'>
+	<IDEDistributionContext: 0x7fc1d2423420; archive = '<IDEArchive: 0x7fc1bb65d6a0>', distributionMethod='<IDEDistributionMethodiOSAppStoreDistribution: 0x7fc1bb4255e0>', team='<IDEProvisioningDisambiguatableBasicTeam: 0x7fc1bc3bdd40; teamID='TTV52MA58C', teamName='Ziyang Wang', teamType='(null)', username='(null)', isFreeProvisioningTeam='0'>'>
+	<IDEDistributionContext: 0x7fc1bb699e10; archive = '<IDEArchive: 0x7fc1bb65d6a0>', distributionMethod='<IDEDistributionMethodiOSAppStoreDistribution: 0x7fc1bb4255e0>', team='(null)'>
+	<IDEDistributionContext: 0x7fc1bc5a2e80; archive = '<IDEArchive: 0x7fc1bb65d6a0>', distributionMethod='<IDEDistributionMethodiOSAppStoreDistribution: 0x7fc1bb4255e0>', team='(null)'>
+	<IDEDistributionContext: 0x7fc1bc586990; archive = '<IDEArchive: 0x7fc1bb65d6a0>', distributionMethod='(null)', team='(null)'>
+</IDEDistributionProcessingPipelineContext: 0x7fc1bb0c2910>
+2020-06-21 23:10:03 +0000  Processing step: IDEDistributionCreateDestRootStep
+2020-06-21 23:10:03 +0000  Processing step: IDEDistributionCopyItemStep
+2020-06-21 23:10:03 +0000  Running /usr/bin/ditto '-V' '/Users/jiachengsun/Library/Developer/Xcode/Archives/2020-06-21/N46Collection 6-21-20, 7.08 PM.xcarchive/Products/Applications/N46Collection.app' '/var/folders/j_/k1bm4nnj1dj800dqtl485kc40000gn/T/XcodeDistPipeline.~~~4hYbbH/Root/Payload/N46Collection.app'
+2020-06-21 23:10:03 +0000  >>> Copying /Users/jiachengsun/Library/Developer/Xcode/Archives/2020-06-21/N46Collection 6-21-20, 7.08 PM.xcarchive/Products/Applications/N46Collection.app 
+2020-06-21 23:10:03 +0000  copying file ./_CodeSignature/CodeResources ... 
+2020-06-21 23:10:03 +0000  3919 bytes for ./_CodeSignature/CodeResources
+2020-06-21 23:10:03 +0000  copying file ./AppIcon60x60@2x.png ... 
+2020-06-21 23:10:03 +0000  3310 bytes for ./AppIcon60x60@2x.png
+2020-06-21 23:10:03 +0000  copying file ./N46Collection ... 
+2020-06-21 23:10:03 +0000  1285008 bytes for ./N46Collection
+2020-06-21 23:10:03 +0000  copying file ./Base.lproj/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib ... 
+2020-06-21 23:10:03 +0000  1197 bytes for ./Base.lproj/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib
+2020-06-21 23:10:03 +0000  copying file ./Base.lproj/LaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib ... 
+2020-06-21 23:10:03 +0000  896 bytes for ./Base.lproj/LaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib
+2020-06-21 23:10:03 +0000  copying file ./Base.lproj/LaunchScreen.storyboardc/Info.plist ... 
+2020-06-21 23:10:03 +0000  258 bytes for ./Base.lproj/LaunchScreen.storyboardc/Info.plist
+2020-06-21 23:10:03 +0000  copying file ./Assets.car ... 
+2020-06-21 23:10:03 +0000  3867199 bytes for ./Assets.car
+2020-06-21 23:10:03 +0000  copying file ./AppIcon76x76@2x~ipad.png ... 
+4088 bytes for ./AppIcon76x76@2x~ipad.png
+copying file ./embedded.mobileprovision ... 
+10485 bytes for ./embedded.mobileprovision
+copying file ./Nogizaka_members.json ... 
+2020-06-21 23:10:03 +0000  28909 bytes for ./Nogizaka_members.json
+2020-06-21 23:10:03 +0000  copying file ./Info.plist ... 
+2020-06-21 23:10:03 +0000  1557 bytes for ./Info.plist
+2020-06-21 23:10:03 +0000  copying file ./PkgInfo ... 
+2020-06-21 23:10:03 +0000  8 bytes for ./PkgInfo
+2020-06-21 23:10:03 +0000  /usr/bin/ditto exited with 0
+2020-06-21 23:10:03 +0000  Processing step: IDEDistributionEmbedProfileStep
+2020-06-21 23:10:03 +0000  Processing step: IDEDistributionInfoPlistStep
+2020-06-21 23:10:03 +0000  Skipping step: IDEDistributionInfoPlistStep because it said so
+2020-06-21 23:10:03 +0000  Processing step: IDEDistributionItemRemovalStep
+2020-06-21 23:10:03 +0000  Processing step: IDEDistributionAppThinningPlistStep
+2020-06-21 23:10:03 +0000  Skipping step: IDEDistributionAppThinningPlistStep because it said so
+2020-06-21 23:10:03 +0000  Processing step: IDEDistributionCompileBitcodeStep
+2020-06-21 23:10:03 +0000  Skipping step: IDEDistributionCompileBitcodeStep because it said so
+2020-06-21 23:10:03 +0000  Processing step: IDEDistributionCodeSlimmingStep
+2020-06-21 23:10:03 +0000  Processing step: IDEDistributionCopyBCSymbolMapsStep
+2020-06-21 23:10:03 +0000  Running /usr/bin/ditto '-V' '/Users/jiachengsun/Library/Developer/Xcode/Archives/2020-06-21/N46Collection 6-21-20, 7.08 PM.xcarchive/BCSymbolMaps/5C9D1AC1-80F6-34C3-AA63-DC7C8CD26DD7.bcsymbolmap' '/var/folders/j_/k1bm4nnj1dj800dqtl485kc40000gn/T/XcodeDistPipeline.~~~4hYbbH/Root/BCSymbolMaps/5C9D1AC1-80F6-34C3-AA63-DC7C8CD26DD7.bcsymbolmap'
+2020-06-21 23:10:03 +0000  >>> Copying /Users/jiachengsun/Library/Developer/Xcode/Archives/2020-06-21/N46Collection 6-21-20, 7.08 PM.xcarchive/BCSymbolMaps/5C9D1AC1-80F6-34C3-AA63-DC7C8CD26DD7.bcsymbolmap 
+2020-06-21 23:10:03 +0000  copying file ./5C9D1AC1-80F6-34C3-AA63-DC7C8CD26DD7.bcsymbolmap ... 
+2020-06-21 23:10:03 +0000  394155 bytes for ./5C9D1AC1-80F6-34C3-AA63-DC7C8CD26DD7.bcsymbolmap
+2020-06-21 23:10:03 +0000  /usr/bin/ditto exited with 0
+2020-06-21 23:10:03 +0000  Processing step: IDEDistributionSymbolsStep
+2020-06-21 23:10:03 +0000  Excluding symbols for N46Collection.app
+2020-06-21 23:10:03 +0000  Processing step: IDEDistributionCopyAppleProvidedContentStep
+2020-06-21 23:10:03 +0000  Processing step: IDEDistributionAppThinningStep
+2020-06-21 23:10:03 +0000  Skipping step: IDEDistributionAppThinningStep because it said so
+2020-06-21 23:10:03 +0000  Processing step: IDEDistributionArchThinningStep
+2020-06-21 23:10:03 +0000  Running /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo '/var/folders/j_/k1bm4nnj1dj800dqtl485kc40000gn/T/XcodeDistPipeline.~~~4hYbbH/Root/Payload/N46Collection.app/N46Collection' '-verify_arch' 'arm64e'
+2020-06-21 23:10:03 +0000  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/lipo exited with 1
+2020-06-21 23:10:03 +0000  Skipping architecture thinning for item "N46Collection" because arch "arm64e" wasn't found
+2020-06-21 23:10:03 +0000  Processing step: IDEDistributionODRStep
+2020-06-21 23:10:03 +0000  Processing step: IDEDistributionStripXattrsStep
+2020-06-21 23:10:03 +0000  Running /usr/bin/xattr '-crs' '/var/folders/j_/k1bm4nnj1dj800dqtl485kc40000gn/T/XcodeDistPipeline.~~~4hYbbH/Root/Payload/N46Collection.app'
+2020-06-21 23:10:03 +0000  /usr/bin/xattr exited with 0
+2020-06-21 23:10:03 +0000  Processing step: IDEDistributionCodesignStep
+2020-06-21 23:10:03 +0000  Entitlements for <IDEDistributionItem: 0x7fc1d3847ad0; bundleID='com.idealtechnology.miniapp', path='<DVTFilePath:0x7fc1bc531680:'/Users/jiachengsun/Library/Developer/Xcode/Archives/2020-06-21/N46Collection 6-21-20, 7.08 PM.xcarchive/Products/Applications/N46Collection.app'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x7fc1bb2da1e0; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x7fc1bc59f4d0; name='iPhone Distribution: Ziyang Wang (TTV52MA58C)', hash='28E4350C429C4DBA788545F43B5D4D0E3AC6C0CF', serialNumber='3E15AA65EA348287', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2020-06-21 22:31:06 +0000''>', entitlements='{
+    "application-identifier" = "TTV52MA58C.com.idealtechnology.miniapp";
+    "com.apple.developer.team-identifier" = TTV52MA58C;
+    "get-task-allow" = 0;
+    "keychain-access-groups" =     (
+        "TTV52MA58C.com.idealtechnology.miniapp"
+    );
+}', teamID='TTV52MA58C', identifier='com.idealtechnology.miniapp', executablePath='<DVTFilePath:0x7fc1bb783c30:'/Users/jiachengsun/Library/Developer/Xcode/Archives/2020-06-21/N46Collection 6-21-20, 7.08 PM.xcarchive/Products/Applications/N46Collection.app/N46Collection'>', hardenedRuntime='0'>'>: {
+    "application-identifier" = "TTV52MA58C.com.idealtechnology.miniapp";
+    "beta-reports-active" = 1;
+    "com.apple.developer.team-identifier" = TTV52MA58C;
+    "get-task-allow" = 0;
+    "keychain-access-groups" =     (
+        "TTV52MA58C.com.idealtechnology.miniapp"
+    );
+}
+2020-06-21 23:10:03 +0000  Writing entitlements for <IDEDistributionItem: 0x7fc1d3847ad0; bundleID='com.idealtechnology.miniapp', path='<DVTFilePath:0x7fc1bc531680:'/Users/jiachengsun/Library/Developer/Xcode/Archives/2020-06-21/N46Collection 6-21-20, 7.08 PM.xcarchive/Products/Applications/N46Collection.app'>', codeSigningInfo='<_DVTCodeSigningInformation_Path: 0x7fc1bb2da1e0; isSigned='1', isAdHocSigned='0', signingCertificate='<DVTSigningCertificate: 0x7fc1bc50eb30; name='iPhone Distribution: Ziyang Wang (TTV52MA58C)', hash='28E4350C429C4DBA788545F43B5D4D0E3AC6C0CF', serialNumber='3E15AA65EA348287', certificateKinds='(
+    "1.2.840.113635.100.6.1.4"
+), issueDate='2020-06-21 22:31:06 +0000''>', entitlements='{
+    "application-identifier" = "TTV52MA58C.com.idealtechnology.miniapp";
+    "com.apple.developer.team-identifier" = TTV52MA58C;
+    "get-task-allow" = 0;
+    "keychain-access-groups" =     (
+        "TTV52MA58C.com.idealtechnology.miniapp"
+    );
+}', teamID='TTV52MA58C', identifier='com.idealtechnology.miniapp', executablePath='<DVTFilePath:0x7fc1bb783c30:'/Users/jiachengsun/Library/Developer/Xcode/Archives/2020-06-21/N46Collection 6-21-20, 7.08 PM.xcarchive/Products/Applications/N46Collection.app/N46Collection'>', hardenedRuntime='0'>'> to: /var/folders/j_/k1bm4nnj1dj800dqtl485kc40000gn/T/XcodeDistPipeline.~~~4hYbbH/entitlements~~~Vu3pCY
+2020-06-21 23:10:03 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' '28E4350C429C4DBA788545F43B5D4D0E3AC6C0CF' '--entitlements' '/var/folders/j_/k1bm4nnj1dj800dqtl485kc40000gn/T/XcodeDistPipeline.~~~4hYbbH/entitlements~~~Vu3pCY' '--preserve-metadata=identifier,flags,runtime' '/var/folders/j_/k1bm4nnj1dj800dqtl485kc40000gn/T/XcodeDistPipeline.~~~4hYbbH/Root/Payload/N46Collection.app'
+2020-06-21 23:10:04 +0000  /var/folders/j_/k1bm4nnj1dj800dqtl485kc40000gn/T/XcodeDistPipeline.~~~4hYbbH/Root/Payload/N46Collection.app: signed app bundle with Mach-O thin (arm64) [com.idealtechnology.miniapp]
+2020-06-21 23:10:04 +0000  /usr/bin/codesign exited with 0
+2020-06-21 23:10:04 +0000  Processing step: IDEDistributionZipODRItemStep
+2020-06-21 23:10:04 +0000  Skipping step: IDEDistributionZipODRItemStep because it said so
+2020-06-21 23:10:04 +0000  Processing step: IDEDistributionCreateIPAStep
+2020-06-21 23:10:04 +0000  Running /usr/bin/ditto '-V' '-c' '-k' '--norsrc' '/var/folders/j_/k1bm4nnj1dj800dqtl485kc40000gn/T/XcodeDistPipeline.~~~4hYbbH/Root' '/var/folders/j_/k1bm4nnj1dj800dqtl485kc40000gn/T/XcodeDistPipeline.~~~4hYbbH/Packages/N46Collection.ipa'
+2020-06-21 23:10:04 +0000  >>> Copying /var/folders/j_/k1bm4nnj1dj800dqtl485kc40000gn/T/XcodeDistPipeline.~~~4hYbbH/Root 
+2020-06-21 23:10:04 +0000  copying file ./BCSymbolMaps/5C9D1AC1-80F6-34C3-AA63-DC7C8CD26DD7.bcsymbolmap ... 
+2020-06-21 23:10:04 +0000  394155 bytes for ./BCSymbolMaps/5C9D1AC1-80F6-34C3-AA63-DC7C8CD26DD7.bcsymbolmap
+2020-06-21 23:10:04 +0000  copying file ./Payload/N46Collection.app/_CodeSignature/CodeResources ... 
+2020-06-21 23:10:04 +0000  3919 bytes for ./Payload/N46Collection.app/_CodeSignature/CodeResources
+2020-06-21 23:10:04 +0000  copying file ./Payload/N46Collection.app/AppIcon60x60@2x.png ... 
+2020-06-21 23:10:04 +0000  3310 bytes for ./Payload/N46Collection.app/AppIcon60x60@2x.png
+copying file ./Payload/N46Collection.app/N46Collection ... 
+2020-06-21 23:10:04 +0000  1037680 bytes for ./Payload/N46Collection.app/N46Collection
+2020-06-21 23:10:04 +0000  copying file ./Payload/N46Collection.app/Base.lproj/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib ... 
+2020-06-21 23:10:04 +0000  1197 bytes for ./Payload/N46Collection.app/Base.lproj/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib
+2020-06-21 23:10:04 +0000  copying file ./Payload/N46Collection.app/Base.lproj/LaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib ... 
+2020-06-21 23:10:04 +0000  896 bytes for ./Payload/N46Collection.app/Base.lproj/LaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib
+copying file ./Payload/N46Collection.app/Base.lproj/LaunchScreen.storyboardc/Info.plist ... 
+2020-06-21 23:10:04 +0000  258 bytes for ./Payload/N46Collection.app/Base.lproj/LaunchScreen.storyboardc/Info.plist
+copying file ./Payload/N46Collection.app/Assets.car ... 
+2020-06-21 23:10:04 +0000  3867199 bytes for ./Payload/N46Collection.app/Assets.car
+2020-06-21 23:10:04 +0000  copying file ./Payload/N46Collection.app/AppIcon76x76@2x~ipad.png ... 
+4088 bytes for ./Payload/N46Collection.app/AppIcon76x76@2x~ipad.png
+copying file ./Payload/N46Collection.app/embedded.mobileprovision ... 
+2020-06-21 23:10:04 +0000  9880 bytes for ./Payload/N46Collection.app/embedded.mobileprovision
+copying file ./Payload/N46Collection.app/Nogizaka_members.json ... 
+2020-06-21 23:10:04 +0000  28909 bytes for ./Payload/N46Collection.app/Nogizaka_members.json
+2020-06-21 23:10:04 +0000  copying file ./Payload/N46Collection.app/Info.plist ... 
+2020-06-21 23:10:04 +0000  1557 bytes for ./Payload/N46Collection.app/Info.plist
+copying file ./Payload/N46Collection.app/PkgInfo ... 
+2020-06-21 23:10:04 +0000  8 bytes for ./Payload/N46Collection.app/PkgInfo
+2020-06-21 23:10:04 +0000  /usr/bin/ditto exited with 0
+2020-06-21 23:10:04 +0000  Processing step: IDEDistributionAppStoreInformationStep
+2020-06-21 23:10:04 +0000  Skipping step: IDEDistributionAppStoreInformationStep because it said so
+2020-06-21 23:10:04 +0000  Processing step: IDEDistributionGenerateProcessedDistributionItems
+2020-06-21 23:10:04 +0000  Processing step: IDEDistributionCreateManifestStep
+2020-06-21 23:10:04 +0000  Skipping step: IDEDistributionCreateManifestStep because it said so

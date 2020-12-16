@@ -1,0 +1,36 @@
+
+App Thinning Size Report for All Variants of N46Collection
+
+Variant: N46Collection-4212D72D-435D-483F-9D33-34F83F96115A.ipa
+Supported variant descriptors: [device: iPad8,2, os-version: 13.0], [device: iPad6,3, os-version: 13.0], [device: iPad7,5, os-version: 13.0], [device: iPad5,3, os-version: 13.0], [device: iPad7,4, os-version: 13.0], [device: iPad8,1, os-version: 13.0], [device: iPad7,1, os-version: 13.0], [device: iPad5,1, os-version: 13.0], [device: iPad8,4, os-version: 13.0], [device: iPad8,7, os-version: 13.0], [device: iPad7,2, os-version: 13.0], [device: iPad6,12, os-version: 13.0], [device: iPad8,10, os-version: 13.0], [device: iPad8,9, os-version: 13.0], [device: iPad6,11, os-version: 13.0], [device: iPad11,3, os-version: 13.0], [device: iPad11,4, os-version: 13.0], [device: iPad8,5, os-version: 13.0], [device: iPad6,4, os-version: 13.0], [device: iPad6,7, os-version: 13.0], [device: iPad7,3, os-version: 13.0], [device: iPad8,8, os-version: 13.0], [device: iPad5,2, os-version: 13.0], [device: iPad5,4, os-version: 13.0], [device: iPad7,6, os-version: 13.0], [device: iPad8,3, os-version: 13.0], [device: iPad8,12, os-version: 13.0], [device: iPad11,1, os-version: 13.0], [device: iPad8,6, os-version: 13.0], [device: iPad11,2, os-version: 13.0], [device: iPad8,11, os-version: 13.0], [device: iPad6,8, os-version: 13.0], [device: iPad7,11, os-version: 13.0], and [device: iPad7,12, os-version: 13.0]
+App + On Demand Resources size: 3.7 MB compressed, 4.1 MB uncompressed
+App size: 3.7 MB compressed, 4.1 MB uncompressed
+On Demand Resources size: Zero KB compressed, Zero KB uncompressed
+
+
+Variant: N46Collection-7D6264C6-3762-42BA-8B1F-F9A8AEDA81BE.ipa
+Supported variant descriptors: [device: iPhone10,4, os-version: 13.0], [device: iPhone9,3, os-version: 13.0], [device: iPod9,1, os-version: 13.0], [device: iPhone8,4, os-version: 13.0], [device: iPhone10,1, os-version: 13.0], [device: iPhone12,8, os-version: 13.0], [device: iPhone8,1, os-version: 13.0], and [device: iPhone9,1, os-version: 13.0]
+App + On Demand Resources size: 3.6 MB compressed, 4.1 MB uncompressed
+App size: 3.6 MB compressed, 4.1 MB uncompressed
+On Demand Resources size: Zero KB compressed, Zero KB uncompressed
+
+
+Variant: N46Collection-8EEAD4D2-E17E-40EA-82C9-2B2204D21AED.ipa
+Supported variant descriptors: [device: iPhone11,6, os-version: 13.0], [device: iPhone10,5, os-version: 13.0], [device: iPhone12,5, os-version: 13.0], [device: iPhone12,3, os-version: 13.0], [device: iPhone10,3, os-version: 13.0], [device: iPhone9,2, os-version: 13.0], [device: iPhone10,2, os-version: 13.0], [device: iPhone8,2, os-version: 13.0], [device: iPhone10,6, os-version: 13.0], [device: iPhone11,4, os-version: 13.0], [device: iPhone11,2, os-version: 13.0], and [device: iPhone9,4, os-version: 13.0]
+App + On Demand Resources size: 3.7 MB compressed, 4.1 MB uncompressed
+App size: 3.7 MB compressed, 4.1 MB uncompressed
+On Demand Resources size: Zero KB compressed, Zero KB uncompressed
+
+
+Variant: N46Collection-C58CDA04-A109-4D29-9624-7A4349F712AF.ipa
+Supported variant descriptors: [device: iPhone12,1, os-version: 13.0] and [device: iPhone11,8, os-version: 13.0]
+App + On Demand Resources size: 3.7 MB compressed, 4.1 MB uncompressed
+App size: 3.7 MB compressed, 4.1 MB uncompressed
+On Demand Resources size: Zero KB compressed, Zero KB uncompressed
+
+
+Variant: N46Collection.ipa
+Supported variant descriptors: Universal
+App + On Demand Resources size: 3.7 MB compressed, 4.2 MB uncompressed
+App size: 3.7 MB compressed, 4.2 MB uncompressed
+On Demand Resources size: Zero KB compressed, Zero KB uncompressed
