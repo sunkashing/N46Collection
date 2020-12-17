@@ -20,8 +20,8 @@ struct FilterView: View {
 
                 Section(content: {
                     Picker("ランク", selection: $filter.rankType, content: {
-                        ForEach(FilterInfo.RankType.allCases) { rank in
-                            Text(rank.name).tag(rank)
+                        ForEach(FilterInfo.RankType.allCases, id: \.self) {
+                            Text($0.name)
                         }
                     })
                         .pickerStyle(SegmentedPickerStyle())
@@ -29,8 +29,8 @@ struct FilterView: View {
 
                 Section(content: {
                     Picker("順番", selection: $filter.rankOrder, content: {
-                        ForEach(FilterInfo.RankOrder.allCases) { order in
-                            Text(order.name).tag(order)
+                        ForEach(FilterInfo.RankOrder.allCases, id: \.self) {
+                            Text($0.name)
                         }
                     })
                         .pickerStyle(SegmentedPickerStyle())
@@ -38,8 +38,8 @@ struct FilterView: View {
 
                 Section(content: {
                     Picker("ラベル", selection: $filter.statusType, content: {
-                        ForEach(FilterInfo.StatusType.allCases) { status in
-                            Text(status.name).tag(status)
+                        ForEach(FilterInfo.StatusType.allCases, id: \.self) {
+                            Text($0.name)
                         }
                     })
                         .pickerStyle(DefaultPickerStyle())
