@@ -18,6 +18,7 @@ struct MemberPageView: View {
         NavigationView {
             ScrollView {
                 VStack {
+                    
                     HStack {
                         Spacer()
                         Button(action: {
@@ -50,9 +51,12 @@ struct MemberPageView: View {
                     MemberPageContentView(memberViewModel: self.memberViewModel, vGridLayout: self.$vGridLayout)
                         .navigationTitle(LocalizedStringKey(filter.statusType.name))
                         .toolbar {
-                            ToolbarItem(placement: .navigationBarLeading) {
-                                NaviagationBarProfileButtonView()
-                            }
+//                            ToolbarItem(placement: .navigationBarLeading) {
+//                                NaviagationBarProfileButtonView()
+//                            }
+//                            ToolbarItem(placement: .na) {
+//
+//                            }
                             
                             ToolbarItem(placement: .navigationBarTrailing) {
                                 NaviagationBarFilterButtonView(showingDetail: self.$showingDetail)

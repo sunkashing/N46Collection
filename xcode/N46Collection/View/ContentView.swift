@@ -13,13 +13,15 @@ struct ContentView: View {
     var body: some View {
 
         TabView {
+//            MemberSearchView(view: MemberPageView())
             MemberPageView()
+                .ignoresSafeArea()
                 .tabItem {
                     Image(systemName: "person.3")
                         .font(.headline)
                     Text(LocalizedStringKey("メンバー"))
                 }
-
+            
             Text("news")
                 .tabItem {
                     Image(systemName: "bell")
@@ -27,7 +29,7 @@ struct ContentView: View {
                     Text(LocalizedStringKey("ニュース"))
                 }
         }
-        .accentColor(NogiColor.purple)
+        .accentColor(Color(.systemPurple))
     }
 }
 

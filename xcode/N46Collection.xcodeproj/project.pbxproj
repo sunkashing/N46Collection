@@ -26,6 +26,7 @@
 		A6FDBE3A24834876000B6888 /* helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FDBE3924834876000B6888 /* helper.swift */; };
 		A6FDBE3D24835AA5000B6888 /* Nogizaka_members.json in Resources */ = {isa = PBXBuildFile; fileRef = A6FDBE3C24835AA5000B6888 /* Nogizaka_members.json */; };
 		C9E116002591EC3500295579 /* NogiColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E115FF2591EC3500295579 /* NogiColor.swift */; };
+		C9E1160325920CD200295579 /* MemberSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E1160225920CD200295579 /* MemberSearchView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		A6FDBE3924834876000B6888 /* helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helper.swift; sourceTree = "<group>"; };
 		A6FDBE3C24835AA5000B6888 /* Nogizaka_members.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Nogizaka_members.json; sourceTree = "<group>"; };
 		C9E115FF2591EC3500295579 /* NogiColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NogiColor.swift; sourceTree = "<group>"; };
+		C9E1160225920CD200295579 /* MemberSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberSearchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				A6EA0FF2249C18AE000F1142 /* MemberPageView.swift */,
 				A6BA5D58249F4A8F008F294C /* animation.swift */,
 				A694F76A2473EF31006E38B4 /* ContentView.swift */,
+				C9E1160225920CD200295579 /* MemberSearchView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 				A6BA5D59249F4A8F008F294C /* animation.swift in Sources */,
 				A694F7672473EF31006E38B4 /* AppDelegate.swift in Sources */,
 				A694F7692473EF31006E38B4 /* SceneDelegate.swift in Sources */,
+				C9E1160325920CD200295579 /* MemberSearchView.swift in Sources */,
 				A60F43C924AAB1E40085E045 /* MemberViewModel.swift in Sources */,
 				A6BA5D53249DD4BC008F294C /* FilterView.swift in Sources */,
 				A694F76B2473EF31006E38B4 /* ContentView.swift in Sources */,
