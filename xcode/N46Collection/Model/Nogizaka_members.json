@@ -10,7 +10,8 @@
                 "birthday": "1993年8月20日",
                 "blood_type": "B型",
                 "constellation": "しし座",
-                "height": "154cm"
+                "height": "154cm",
+                "colors": ["red", "pink"]
             },
             "status": [
                 "1期生",
@@ -31,7 +32,8 @@
                 "birthday": "1997年1月22日",
                 "blood_type": "A型",
                 "constellation": "みずがめ座",
-                "height": "160cm"
+                "height": "160cm",
+                "colors": ["yellow", "yellow"]
             },
             "status": [
                 "1期生",
@@ -51,7 +53,8 @@
                 "birthday": "1998年11月30日",
                 "blood_type": "A型",
                 "constellation": "いて座",
-                "height": "166cm"
+                "height": "166cm",
+                "colors": ["cyan", "pink"]
             },
             "status": [
                 "2期生",
@@ -70,7 +73,8 @@
                 "birthday": "2002年10月8日",
                 "blood_type": "B型",
                 "constellation": "てんびん座",
-                "height": "154cm"
+                "height": "154cm",
+                "colors": ["purple", "red"]
             },
             "status": [
                 "3期生",
@@ -89,7 +93,8 @@
                 "birthday": "2004年2月2日",
                 "blood_type": "B型",
                 "constellation": "みずがめ座",
-                "height": "157cm"
+                "height": "157cm",
+                "colors": ["red", "pink"]
             },
             "status": [
                 "3期生",
@@ -108,7 +113,8 @@
                 "birthday": "1999年1月6日",
                 "blood_type": "A型",
                 "constellation": "やぎ座",
-                "height": "170cm"
+                "height": "170cm",
+                "colors": ["blue", "cyan"]
             },
             "status": [
                 "3期生",
@@ -127,7 +133,8 @@
                 "birthday": "1999年9月13日",
                 "blood_type": "O型",
                 "constellation": "おとめ座",
-                "height": "156cm"
+                "height": "156cm",
+                "colors": ["pink", "green"]
             },
             "status": [
                 "3期生",
@@ -146,7 +153,8 @@
                 "birthday": "1996年7月17日",
                 "blood_type": "O型",
                 "constellation": "かに座",
-                "height": "158cm"
+                "height": "158cm",
+                "colors": ["pink", "chartreuse"]
             },
             "status": [
                 "2期生",
@@ -165,7 +173,8 @@
                 "birthday": "2001年7月14日",
                 "blood_type": "O型",
                 "constellation": "かに座",
-                "height": "159cm"
+                "height": "159cm",
+                "colors": ["cyan", "yellow"]
             },
             "status": [
                 "3期生",
@@ -184,7 +193,8 @@
                 "birthday": "1998年8月10日",
                 "blood_type": "O型",
                 "constellation": "しし座",
-                "height": "158cm"
+                "height": "158cm",
+                "colors": ["cyan", "white"]
             },
             "status": [
                 "1期生",
@@ -204,7 +214,8 @@
                 "birthday": "2001年11月10日",
                 "blood_type": "A型",
                 "constellation": "さそり座",
-                "height": "161cm"
+                "height": "161cm",
+                "colors": ["purple", "yellow"]
             },
             "status": [
                 "3期生",
@@ -223,7 +234,8 @@
                 "birthday": "1998年3月23日",
                 "blood_type": "A型",
                 "constellation": "おひつじ座",
-                "height": "161cm"
+                "height": "161cm",
+                "colors": ["red", "red"]
             },
             "status": [
                 "3期生",
@@ -242,12 +254,14 @@
                 "birthday": "1992年8月20日",
                 "blood_type": "A型",
                 "constellation": "しし座",
-                "height": "162cm"
+                "height": "162cm",
+                "colors": ["cyan", "cyan"]
             },
             "status": [
                 "1期生",
                 "選抜メンバー",
-                "十一福神"
+                "十一福神",
+                "元メンバー"
             ]
         }
     },
@@ -262,7 +276,8 @@
                 "birthday": "1992年1月22日",
                 "blood_type": "B型",
                 "constellation": "みずがめ座",
-                "height": "165cm"
+                "height": "165cm",
+                "colors": ["blue", "purple"]
             },
             "status": [
                 "2期生",
@@ -281,7 +296,8 @@
                 "birthday": "1999年3月5日",
                 "blood_type": "O型",
                 "constellation": "うお座",
-                "height": "160cm"
+                "height": "160cm",
+                "colors": ["white", "purple"]
             },
             "status": [
                 "2期生",
@@ -300,7 +316,8 @@
                 "birthday": "1994年2月8日",
                 "blood_type": "A型",
                 "constellation": "みずがめ座",
-                "height": "162cm"
+                "height": "162cm",
+                "colors": ["cyan", "pink"]
             },
             "status": [
                 "1期生",
@@ -320,7 +337,8 @@
                 "birthday": "1998年9月23日",
                 "blood_type": "不明",
                 "constellation": "てんびん座",
-                "height": "155cm"
+                "height": "155cm",
+                "colors": ["red", "white"]
             },
             "status": [
                 "2期生",
@@ -339,11 +357,13 @@
                 "birthday": "1994年8月6日",
                 "blood_type": "A型",
                 "constellation": "しし座",
-                "height": "158cm"
+                "height": "158cm",
+                "colors": ["black", "white"]
             },
             "status": [
                 "1期生",
                 "選抜メンバー",
+                "元メンバー",
                 "十一福神"
             ]
         }
@@ -359,7 +379,8 @@
                 "birthday": "2001年9月27日",
                 "blood_type": "不明",
                 "constellation": "てんびん座",
-                "height": "167cm"
+                "height": "167cm",
+                "colors": ["blue", "white"]
             },
             "status": [
                 "3期生",
@@ -378,7 +399,8 @@
                 "birthday": "1998年1月31日",
                 "blood_type": "A型",
                 "constellation": "みずがめ座",
-                "height": "159cm"
+                "height": "159cm",
+                "colors": ["purple", "orange"]
             },
             "status": [
                 "1期生",
@@ -398,7 +420,8 @@
                 "birthday": "1998年2月6日",
                 "blood_type": "B型",
                 "constellation": "みずがめ座",
-                "height": "155cm"
+                "height": "155cm",
+                "colors": ["white", "white"]
             },
             "status": [
                 "1期生",
@@ -418,7 +441,8 @@
                 "birthday": "1996年10月15日",
                 "blood_type": "O型",
                 "constellation": "てんびん座",
-                "height": "160cm"
+                "height": "160cm",
+                "colors": ["white", "orange"]
             },
             "status": [
                 "2期生",
@@ -437,7 +461,8 @@
                 "birthday": "1992年8月27日",
                 "blood_type": "B型",
                 "constellation": "おとめ座",
-                "height": "164cm"
+                "height": "164cm",
+                "colors": ["red", "red"]
             },
             "status": [
                 "1期生",
@@ -457,7 +482,8 @@
                 "birthday": "1999年8月23日",
                 "blood_type": "A型",
                 "constellation": "おとめ座",
-                "height": "152cm"
+                "height": "152cm",
+                "colors": ["yellow", "yellow"]
             },
             "status": [
                 "3期生",
@@ -476,7 +502,8 @@
                 "birthday": "1997年5月21日",
                 "blood_type": "B型",
                 "constellation": "ふたご座",
-                "height": "164cm"
+                "height": "164cm",
+                "colors": ["yellow", "white"]
             },
             "status": [
                 "2期生",
@@ -495,7 +522,8 @@
                 "birthday": "1999年7月26日",
                 "blood_type": "O型",
                 "constellation": "しし座",
-                "height": "159cm"
+                "height": "159cm",
+                "colors": ["blue", "yellow"]
             },
             "status": [
                 "3期生",
@@ -514,7 +542,8 @@
                 "birthday": "1995年9月6日",
                 "blood_type": "A型",
                 "constellation": "おとめ座",
-                "height": "161cm"
+                "height": "161cm",
+                "colors": ["pink", "purple"]
             },
             "status": [
                 "3期生",
@@ -533,7 +562,8 @@
                 "birthday": "2000年5月5日",
                 "blood_type": "O型",
                 "constellation": "おうし座",
-                "height": "152cm"
+                "height": "152cm",
+                "colors": ["red", "green"]
             },
             "status": [
                 "3期生",
@@ -552,7 +582,8 @@
                 "birthday": "1999年11月1日",
                 "blood_type": "O型",
                 "constellation": "さそり座",
-                "height": "153cm"
+                "height": "153cm",
+                "colors": ["yellow", "chartreuse"]
             },
             "status": [
                 "2期生",
@@ -571,7 +602,8 @@
                 "birthday": "1998年4月23日",
                 "blood_type": "O型",
                 "constellation": "おうし座",
-                "height": "160cm"
+                "height": "160cm",
+                "colors": ["yellow", "orange"]
             },
             "status": [
                 "1期生",
@@ -591,7 +623,8 @@
                 "birthday": "2001年10月3日",
                 "blood_type": "不明",
                 "constellation": "てんびん座",
-                "height": "160cm"
+                "height": "160cm",
+                "colors": ["pink", "white"]
             },
             "status": [
                 "4期生",
@@ -610,7 +643,8 @@
                 "birthday": "2001年8月8日",
                 "blood_type": "A型",
                 "constellation": "しし座",
-                "height": "166cm"
+                "height": "166cm",
+                "colors": ["orange", "green"]
             },
             "status": [
                 "4期生",
@@ -629,7 +663,8 @@
                 "birthday": "2002年11月20日",
                 "blood_type": "B型",
                 "constellation": "さそり座",
-                "height": "156cm"
+                "height": "156cm",
+                "colors": ["pink", "orange"]
             },
             "status": [
                 "4期生"
@@ -647,7 +682,8 @@
                 "birthday": "2001年10月31日",
                 "blood_type": "O型",
                 "constellation": "さそり座",
-                "height": "164cm"
+                "height": "164cm",
+                "colors": ["cyan", "red"]
             },
             "status": [
                 "4期生"
@@ -665,7 +701,8 @@
                 "birthday": "2001年8月8日",
                 "blood_type": "不明",
                 "constellation": "しし座",
-                "height": "163cm"
+                "height": "163cm",
+                "colors": ["cyan", "orange"]
             },
             "status": [
                 "4期生"
@@ -683,7 +720,8 @@
                 "birthday": "2003年3月3日",
                 "blood_type": "A型",
                 "constellation": "うお座",
-                "height": "160cm"
+                "height": "160cm",
+                "colors": ["blue", "chartreuse"]
             },
             "status": [
                 "4期生"
@@ -701,7 +739,8 @@
                 "birthday": "2003年8月1日",
                 "blood_type": "O型",
                 "constellation": "しし座",
-                "height": "162cm"
+                "height": "162cm",
+                "colors": ["orange", "orange"]
             },
             "status": [
                 "4期生"
@@ -719,7 +758,8 @@
                 "birthday": "1999年1月12日",
                 "blood_type": "A型",
                 "constellation": "やぎ座",
-                "height": "158cm"
+                "height": "158cm",
+                "colors": ["purple", "cyan"]
             },
             "status": [
                 "4期生"
@@ -737,7 +777,8 @@
                 "birthday": "2004年6月8日",
                 "blood_type": "O型",
                 "constellation": "ふたご座",
-                "height": "160cm"
+                "height": "160cm",
+                "colors": ["purple", "purple"]
             },
             "status": [
                 "4期生"
@@ -755,7 +796,8 @@
                 "birthday": "2000年8月24日",
                 "blood_type": "A型",
                 "constellation": "おとめ座",
-                "height": "164cm"
+                "height": "164cm",
+                "colors": ["blue", "blue"]
             },
             "status": [
                 "4期生"
@@ -773,7 +815,8 @@
                 "birthday": "2002年8月14日",
                 "blood_type": "B型",
                 "constellation": "しし座",
-                "height": "152cm"
+                "height": "152cm",
+                "colors": ["pink", "yellow"]
             },
             "status": [
                 "4期生"
@@ -791,7 +834,8 @@
                 "birthday": "2004年1月19日",
                 "blood_type": "O型",
                 "constellation": "やぎ座",
-                "height": "162cm"
+                "height": "162cm",
+                "colors": []
             },
             "status": [
                 "4期生"
@@ -810,6 +854,8 @@
                 "blood_type": "B型",
                 "constellation": "しし座",
                 "height": "158cm"
+                ,
+                "colors": []
             },
             "status": [
                 "4期生"
@@ -827,7 +873,8 @@
                 "birthday": "2003年10月2日",
                 "blood_type": "O型",
                 "constellation": "てんびん座",
-                "height": "163cm"
+                "height": "163cm",
+                "colors": []
             },
             "status": [
                 "4期生"
@@ -845,7 +892,8 @@
                 "birthday": "2004年1月3日",
                 "blood_type": "O型",
                 "constellation": "やぎ座",
-                "height": "165cm"
+                "height": "165cm",
+                "colors": []
             },
             "status": [
                 "4期生"
@@ -863,7 +911,8 @@
                 "birthday": "1999年2月3日",
                 "blood_type": "A型",
                 "constellation": "みずがめ座",
-                "height": "165cm"
+                "height": "165cm",
+                "colors": []
             },
             "status": [
                 "4期生"
@@ -881,7 +930,8 @@
                 "birthday": "1996年1月22日",
                 "blood_type": "A型",
                 "constellation": "みずがめ座",
-                "height": "153cm"
+                "height": "153cm",
+                "colors": []
             },
             "status": [
                 "1期生",
@@ -900,7 +950,8 @@
                 "birthday": "1995年12月12日",
                 "blood_type": "B型",
                 "constellation": "いて座",
-                "height": "148cm"
+                "height": "148cm",
+                "colors": ["pink", "orange"]
             },
             "status": [
                 "1期生",
@@ -919,7 +970,8 @@
                 "birthday": "1995年12月5日",
                 "blood_type": "B型",
                 "constellation": "いて座",
-                "height": "150cm"
+                "height": "150cm",
+                "colors": ["blue", "pink"]
             },
             "status": [
                 "1期生",
@@ -938,7 +990,8 @@
                 "birthday": "1991年7月27日",
                 "blood_type": "O型",
                 "constellation": "しし座",
-                "height": "162cm"
+                "height": "162cm",
+                "colors": []
             },
             "status": [
                 "交換留学生",
@@ -957,7 +1010,8 @@
                 "birthday": "1994年5月19日",
                 "blood_type": "O型",
                 "constellation": "おうし座",
-                "height": "158cm"
+                "height": "158cm",
+                "colors": ["yellow", "yellow"]
             },
             "status": [
                 "1期生",
@@ -976,7 +1030,8 @@
                 "birthday": "1991年3月29日",
                 "blood_type": "O型",
                 "constellation": "おひつじ座",
-                "height": "162cm"
+                "height": "162cm",
+                "colors": ["green", "purple"]
             },
             "status": [
                 "1期生",
@@ -995,7 +1050,8 @@
                 "birthday": "1993年2月20日",
                 "blood_type": "B型",
                 "constellation": "うお座",
-                "height": "163cm"
+                "height": "163cm",
+                "colors": ["green", "green"]
             },
             "status": [
                 "1期生",
@@ -1014,7 +1070,8 @@
                 "birthday": "1996年4月13日",
                 "blood_type": "O型",
                 "constellation": "おひつじ座",
-                "height": "161cm"
+                "height": "161cm",
+                "colors": ["pink", "pink"]
             },
             "status": [
                 "1期生",
@@ -1033,7 +1090,8 @@
                 "birthday": "1996年2月20日",
                 "blood_type": "O型",
                 "constellation": "うお座",
-                "height": "156cm"
+                "height": "156cm",
+                "colors": ["green", "purple"]
             },
             "status": [
                 "1期生",
@@ -1052,7 +1110,8 @@
                 "birthday": "1995年7月23日",
                 "blood_type": "A型",
                 "constellation": "しし座",
-                "height": "157cm"
+                "height": "157cm",
+                "colors": ["red", "white"]
             },
             "status": [
                 "1期生",
@@ -1071,7 +1130,8 @@
                 "birthday": "1995年12月29日",
                 "blood_type": "AB型",
                 "constellation": "やぎ座",
-                "height": "153cm"
+                "height": "153cm",
+                "colors": ["blue", "purple"]
             },
             "status": [
                 "1期生",
@@ -1090,7 +1150,8 @@
                 "birthday": "1997年2月17日",
                 "blood_type": "A型",
                 "constellation": "みずがめ座",
-                "height": "166cm"
+                "height": "166cm",
+                "colors": ["blue", "red"]
             },
             "status": [
                 "1期生",
@@ -1109,7 +1170,8 @@
                 "birthday": "1997年11月26日",
                 "blood_type": "O型",
                 "constellation": "いて座",
-                "height": "164cm"
+                "height": "164cm",
+                "colors": ["green", "orange"]
             },
             "status": [
                 "2期生",
@@ -1128,7 +1190,8 @@
                 "birthday": "1994年6月27日",
                 "blood_type": "O型",
                 "constellation": "かに座",
-                "height": "157cm"
+                "height": "157cm",
+                "colors": ["blue", "blue"]
             },
             "status": [
                 "1期生",
@@ -1147,7 +1210,8 @@
                 "birthday": "1994年10月18日",
                 "blood_type": "A型",
                 "constellation": "てんびん座",
-                "height": "162cm"
+                "height": "162cm",
+                "colors": ["orange", "orange"]
             },
             "status": [
                 "1期生",
@@ -1166,7 +1230,8 @@
                 "birthday": "1998年3月22日",
                 "blood_type": "O型",
                 "constellation": "おひつじ座",
-                "height": "161cm"
+                "height": "161cm",
+                "colors": ["red", "red"]
             },
             "status": [
                 "1期生",
@@ -1185,7 +1250,8 @@
                 "birthday": "1994年5月25日",
                 "blood_type": "O型",
                 "constellation": "ふたご座",
-                "height": "159cm"
+                "height": "159cm",
+                "colors": ["green", "white"]
             },
             "status": [
                 "1期生",
@@ -1204,7 +1270,8 @@
                 "birthday": "1993年1月4日",
                 "blood_type": "AB型",
                 "constellation": "やぎ座",
-                "height": "162cm"
+                "height": "162cm",
+                "colors": ["red", "red"]
             },
             "status": [
                 "1期生",
@@ -1223,7 +1290,8 @@
                 "birthday": "1993年5月26日",
                 "blood_type": "O型",
                 "constellation": "ふたご座",
-                "height": "153cm"
+                "height": "153cm",
+                "colors": ["green", "purple"]
             },
             "status": [
                 "2期生",
@@ -1242,7 +1310,8 @@
                 "birthday": "1993年7月20日",
                 "blood_type": "O型",
                 "constellation": "かに座",
-                "height": "157cm"
+                "height": "157cm",
+                "colors": ["pink", "white"]
             },
             "status": [
                 "1期生",
@@ -1261,7 +1330,8 @@
                 "birthday": "1994年5月16日",
                 "blood_type": "A型",
                 "constellation": "ふたご座",
-                "height": "155cm"
+                "height": "155cm",
+                "colors": ["red", "pink"]
             },
             "status": [
                 "1期生",
@@ -1280,7 +1350,8 @@
                 "birthday": "1998年8月28日",
                 "blood_type": "O型",
                 "constellation": "おとめ座",
-                "height": "163cm"
+                "height": "163cm",
+                "colors": ["blue", "green"]
             },
             "status": [
                 "2期生",
@@ -1299,7 +1370,8 @@
                 "birthday": "1994年12月14日",
                 "blood_type": "B型",
                 "constellation": "ふたご座",
-                "height": "156cm"
+                "height": "156cm",
+                "colors": ["white", "white"]
             },
             "status": [
                 "1期生",

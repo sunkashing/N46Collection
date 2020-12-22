@@ -17,17 +17,17 @@ struct ContentView: View {
                 .tabItem {
                     Image(systemName: "person.3")
                         .font(.headline)
-                    Text("メンバー")
+                    Text(LocalizedStringKey("メンバー"))
                 }
 
             Text("news")
                 .tabItem {
                     Image(systemName: "bell")
                         .font(.headline)
-                    Text("ニュース")
+                    Text(LocalizedStringKey("ニュース"))
                 }
         }
-            .accentColor(Color(.systemPurple))
+        .accentColor(NogiColor.purple)
     }
 }
 

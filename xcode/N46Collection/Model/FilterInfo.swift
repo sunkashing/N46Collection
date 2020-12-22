@@ -7,9 +7,11 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct FilterInfo {
     enum StatusType: CaseIterable, Hashable, Identifiable {
+        case all
         case gen1
         case gen2
         case gen3
@@ -21,7 +23,6 @@ struct FilterInfo {
         case captain
         case present
         case past
-        case all
 
         var id: UUID {
             UUID()
@@ -29,6 +30,8 @@ struct FilterInfo {
 
         var name: String {
             switch self {
+            case .all:
+                return "全部メンバー"
             case .gen1:
                 return "1期生"
             case .gen2:
@@ -51,8 +54,84 @@ struct FilterInfo {
                 return "現メンバー"
             case .past:
                 return "元メンバー"
+        
+            }
+        }
+    }
+    
+    enum ColorType: CaseIterable, Hashable, Identifiable {
+        case all
+        case red
+        case yellow
+        case cyan
+        case green
+        case blue
+        case pink
+        case purple
+        case white
+        case black
+        case orange
+        case chartreuse
+
+        var id: UUID {
+            UUID()
+        }
+
+        var color: Color {
+            switch self {
             case .all:
-                return "全部メンバー"
+                return Color(.secondarySystemBackground)
+            case .red:
+                return Color(.sRGB, red: 1, green: 0, blue: 0)
+            case .yellow:
+                return Color.yellow
+            case .cyan:
+                return Color(UIColor.cyan)
+            case .green:
+                return Color(.sRGB, red: 0, green: 1, blue: 0)
+            case .blue:
+                return Color(.sRGB, red: 0, green: 0, blue: 1)
+            case .pink:
+                return Color(.sRGB, red: 1, green: 0.4, blue: 0.7)
+            case .purple:
+                return Color(.sRGB, red: 0.5, green: 0, blue: 0.5)
+            case .white:
+                return Color.white
+            case .black:
+                return Color.black
+            case .orange:
+                return Color.orange
+            case .chartreuse:
+                return Color.init(red: 0.5, green: 1, blue: 0)
+            }
+        }
+        
+        var name: String {
+            switch self {
+            case .all:
+                return "all"
+            case .red:
+                return "red"
+            case .yellow:
+                return "yellow"
+            case .cyan:
+                return "cyan"
+            case .green:
+                return "green"
+            case .blue:
+                return "blue"
+            case .pink:
+                return "pink"
+            case .purple:
+                return "purple"
+            case .white:
+                return "white"
+            case .black:
+                return "black"
+            case .orange:
+                return "orange"
+            case .chartreuse:
+                return "chartreuse"
             }
         }
     }
@@ -100,5 +179,7 @@ struct FilterInfo {
     var rankType: RankType = .name
 
     var rankOrder: RankOrder = .low
+    
+    var colorType: ColorType = .all
 
 }

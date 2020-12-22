@@ -12,7 +12,7 @@ class MemberViewModel: ObservableObject {
     @Published var model: MemberModel
 
     init() {
-        model = createMemoryGame()
+        model = createMembers()
         model.filterMembers(filter: FilterInfo())
     }
 
@@ -34,7 +34,7 @@ class MemberViewModel: ObservableObject {
 
 }
 
-func createMemoryGame() -> MemberModel {
+func createMembers() -> MemberModel {
     let members: [NogizakaMember] = getInfo()
     return MemberModel(numsOfPairsOfCards: members.count) { pairIndex in
         members[pairIndex]

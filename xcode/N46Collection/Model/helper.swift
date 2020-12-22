@@ -26,6 +26,7 @@ struct NogizakaMember: Codable {
             let blood_type: String
             let constellation: String
             let height: String
+            let colors: [String]
         }
 
     }  

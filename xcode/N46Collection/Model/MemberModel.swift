@@ -42,23 +42,45 @@ struct MemberModel {
 
     mutating func filterMembers(filter: FilterInfo) {
         for card in self.cards {
+            // MARK: - Filter by member status
+            var hide_status = true
+            var hide_color = true
+            
             if filter.statusType != FilterInfo.StatusType.all {
                 if !card.content.member_info.status.contains(filter.statusType.name) {
                     if filter.statusType == FilterInfo.StatusType.present {
                         if card.content.member_info.status.contains("元メンバー") {
-                            self.hide(card: card)
+                            hide_status = true
                         } else {
-                            self.display(card: card)
+                            hide_status = false
                         }
                     } else {
-                        self.hide(card: card)
+                        hide_status = true
                     }
                 } else {
-                    self.display(card: card)
+                    hide_status = false
                 }
+            } else {
+                hide_status = false
+            }
+            
+            // MARK: - Filter by member color
+            if filter.colorType != FilterInfo.ColorType.all {
+                if !card.content.member_info.infos.colors.contains(filter.colorType.name) {
+                    hide_color = true
+                } else {
+                    hide_color = false
+                }
+            } else {
+                hide_color = false
+            }
+            
+            if hide_status || hide_color {
+                self.hide(card: card)
             } else {
                 self.display(card: card)
             }
+            
         }
 
         if filter.rankOrder == FilterInfo.RankOrder.low {

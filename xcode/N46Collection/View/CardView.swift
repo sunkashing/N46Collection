@@ -18,7 +18,6 @@ struct CardView: View {
     var body: some View {
         ZStack {
             Button(action: {
-                print("Card is touched!")
                 self.showingDetail.toggle()
             }, label: {
                     if self.vGridLayout.count == 2 {
@@ -29,11 +28,9 @@ struct CardView: View {
                                     .aspectRatio(contentMode: .fit)
                                     .cornerRadius(15)
                                     .frame(maxWidth: 170)
-//                                    .matchedGeometryEffect(id: "image", in: self.namespace)
                             }
-                            Text(self.card.content.member_info.infos.kanji_name)
-                                .fontWeight(.bold)
-//                                .matchedGeometryEffect(id: "name", in: self.namespace)
+                            Text(LocalizedStringKey(self.card.content.member_info.infos.kanji_name))
+                                .fontWeight(.heavy)
                         }
                     } else {
                         HStack {
@@ -43,25 +40,27 @@ struct CardView: View {
                                     .aspectRatio(contentMode: .fit)
                                     .cornerRadius(15)
                                     .frame(maxWidth: 170)
-//                                    .matchedGeometryEffect(id: "image", in: self.namespace)
                             }
                             VStack(alignment: .leading, spacing: 10) {
-                                Text(self.card.content.member_info.infos.kanji_name)
-                                    .font(.title)
+                                Text(LocalizedStringKey(self.card.content.member_info.infos.kanji_name))
+                                    .font(.title2)
                                     .fontWeight(.bold)
                                     .lineLimit(1)
-//                                    .matchedGeometryEffect(id: "name", in: self.namespace)
+                                Divider()
                                 VStack(alignment: .leading, spacing: 5) {
-                                    Text(self.card.content.member_info.infos.birthday)
+                                    Text(LocalizedStringKey(self.card.content.member_info.infos.birthday))
                                         .lineLimit(1)
-                                    Text(self.card.content.member_info.infos.blood_type)
+                                    Text(LocalizedStringKey(self.card.content.member_info.infos.blood_type))
                                         .lineLimit(1)
-                                    Text(self.card.content.member_info.infos.constellation)
+                                    Text(LocalizedStringKey(self.card.content.member_info.infos.constellation))
                                         .lineLimit(1)
-                                    Text(self.card.content.member_info.infos.height)
+                                    Text(LocalizedStringKey(self.card.content.member_info.infos.height))
                                         .lineLimit(1)
+                                    Spacer()
+                                    
+                                    MemberColorView(card: self.card)
                                 }
-                                Spacer()
+//                                Spacer()
                             }
                                 .padding()
                             Spacer()
@@ -75,16 +74,18 @@ struct CardView: View {
                         CardDetailView(card: self.card)
                     })
                     .buttonStyle(PlainButtonStyle())
+//                    .clipShape(Capsule())
 
             if self.card.content.member_info.status.contains("元メンバー") {
                 VStack {
                     HStack {
                         Spacer()
-                        Text("元")
+                        Text(LocalizedStringKey("元"))
+                            .foregroundColor(.white)
                             .fontWeight(.bold)
                             .padding(10)
-                            .background(Color(.systemPurple))
-                            .clipShape(Circle())
+                            .background(NogiColor.purple)
+                            .clipShape(Capsule())
                             .frame(width: 40, height: 40)
                     }
                     Spacer()
@@ -106,18 +107,18 @@ struct CardDetailView: View {
 
     var body: some View {
         GeometryReader { geometry in
-            ScrollView {
+            ScrollView(.vertical, showsIndicators: false) {
                 VStack(spacing: 30) {
                     Section(content: {
                         VStack(spacing: 5) {
                             HStack {
-                                Text(self.card.content.member_info.infos.kanji_name)
+                                Text(LocalizedStringKey(self.card.content.member_info.infos.kanji_name))
                                     .font(.title)
                                     .fontWeight(.bold)
                                 Spacer()
                             }
                             HStack {
-                                Text(self.card.content.member_info.infos.hiragana_name)
+                                Text(LocalizedStringKey(self.card.content.member_info.infos.hiragana_name))
                                     .font(.headline)
                                     .fontWeight(.bold)
                                 Spacer()
@@ -136,30 +137,30 @@ struct CardDetailView: View {
                     Section(content: {
                         VStack(spacing: 15) {
                             HStack {
-                                Text("誕生日")
+                                Text(LocalizedStringKey("誕生日"))
                                 Spacer()
-                                Text(self.card.content.member_info.infos.birthday)
+                                Text(LocalizedStringKey(self.card.content.member_info.infos.birthday))
                             }
 
 
                             HStack {
-                                Text("血液型")
+                                Text(LocalizedStringKey("血液型"))
                                 Spacer()
-                                Text(self.card.content.member_info.infos.blood_type)
+                                Text(LocalizedStringKey(self.card.content.member_info.infos.blood_type))
                             }
 
 
                             HStack {
-                                Text("星座")
+                                Text(LocalizedStringKey("星座"))
                                 Spacer()
-                                Text(self.card.content.member_info.infos.constellation)
+                                Text(LocalizedStringKey(self.card.content.member_info.infos.constellation))
                             }
 
 
                             HStack {
-                                Text("身長")
+                                Text(LocalizedStringKey("身長"))
                                 Spacer()
-                                Text(self.card.content.member_info.infos.height)
+                                Text(LocalizedStringKey(self.card.content.member_info.infos.height))
                             }
                         }
                     })
@@ -167,37 +168,79 @@ struct CardDetailView: View {
                         .padding()
                         .background(Color(.secondarySystemBackground))
                         .cornerRadius(15)
+                    
+                    MemberColorView(card: self.card)
 
 
-                    Spacer()
+//                    Spacer()
 
                     Section(content: {
-                        HStack(spacing: 15) {
-                            ForEach(0..<self.card.content.member_info.status.count) { index in
-                                Text(self.card.content.member_info.status[index])
-                                    .font(.subheadline)
-                                    .padding(5)
-                                    .overlay(
-                                        RoundedRectangle(cornerRadius: geometry.size.width * 0.01)
-                                            .stroke(lineWidth: geometry.size.width * 0.003)
-                                    )
-                                    .lineLimit(1)
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack(spacing: 15) {
+                                ForEach(0..<self.card.content.member_info.status.count) { index in
+                                    Text(LocalizedStringKey(self.card.content.member_info.status[index]))
+                                        .fontWeight(.heavy)
+                                        .padding(.vertical)
+                                        .padding(.horizontal)
+                                        .background(Color.primary.opacity(0.1))
+                                        .clipShape(Capsule())
+
+                                }
                             }
+                            .frame(width: geometry.size.width * 0.9)
                         }
                     })
                 }
                     .padding(geometry.size.width * 0.05)
-    //                .scaleEffect(self.scale)
-    //                .scaleOnAppear {
-    //                    self.scale = 1
-    //                }
-    //                .scaleOnDisappear {
-    //                    self.scale = 0.5
-    //                }
             }
         }
     }
 
+}
+
+struct MemberColorView: View {
+    var card: MemberModel.Card
+
+    var body: some View {
+        HStack(alignment: .center, spacing: /*@START_MENU_TOKEN@*/nil/*@END_MENU_TOKEN@*/, content: {
+            ForEach(self.card.content.member_info.infos.colors, id: \.self) { color in
+                ZStack{
+                    switch color {
+                    case "red":
+                        Circle().fill(NogiColor.red).frame(width: 30, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    case "yellow":
+                        Circle().fill(NogiColor.yellow).frame(width: 30, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    case "cyan":
+                        Circle().fill(NogiColor.yellow).frame(width: 30, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    case "green":
+                        Circle().fill(NogiColor.green).frame(width: 30, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    case "blue":
+                        Circle().fill(NogiColor.blue).frame(width: 30, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    case "pink":
+                        Circle().fill(NogiColor.pink).frame(width: 30, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    case "purple":
+                        Circle().fill(NogiColor.purple).frame(width: 30, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    case "white":
+                        Circle().fill(NogiColor.white).frame(width: 30, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    case "black":
+                        Circle().fill(NogiColor.black).frame(width: 30, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    case "orange":
+                        Circle().fill(NogiColor.orange).frame(width: 30, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    case "chartreuse":
+                        Circle().fill(NogiColor.chartreuse).frame(width: 30, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    default:
+                        Circle().fill(NogiColor.white).frame(width: 30, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    }
+                
+//                    Circle()
+//                        .strokeBorder(Color.primary, lineWidth: 1)
+                }
+                .overlay(
+                    Circle().stroke(lineWidth: 3)
+                )
+            }
+        })
+    }
 }
 
 

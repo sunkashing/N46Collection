@@ -23,9 +23,6 @@ struct MemberPageView: View {
                         Button(action: {
                             withAnimation(.easeOut) {
                                 if self.vGridLayout.count == 2 {
-//                                    self.vGridLayout.removeLast()
-//                                    self.vGridLayout.removeLast()
-//                                    self.vGridLayout.append(GridItem(.flexible(minimum: 250)))
                                     vGridLayout = [GridItem(.flexible(minimum: 250))]
                                 }
                             }
@@ -40,9 +37,6 @@ struct MemberPageView: View {
                             withAnimation(.easeOut) {
                                 if self.vGridLayout.count == 1 {
                                     vGridLayout = [GridItem(.adaptive(minimum: 170)), GridItem(.adaptive(minimum: 170))]
-//                                    self.vGridLayout.removeLast()
-//                                    self.vGridLayout.append(GridItem(.adaptive(minimum: 170)))
-//                                    self.vGridLayout.append(GridItem(.adaptive(minimum: 170)))
                                 }
                             }
                         }) {
@@ -54,12 +48,23 @@ struct MemberPageView: View {
                         .padding()
 
                     MemberPageContentView(memberViewModel: self.memberViewModel, vGridLayout: self.$vGridLayout)
-                        .navigationBarTitle(LocalizedStringKey(filter.statusType.name))
-                        .navigationBarItems(leading: NaviagationBarProfileButtonView(), trailing: NaviagationBarFilterButtonView(showingDetail: self.$showingDetail, filter: self.$filter, memberViewModel: self.memberViewModel))
+                        .navigationTitle(LocalizedStringKey(filter.statusType.name))
+                        .toolbar {
+                            ToolbarItem(placement: .navigationBarLeading) {
+                                NaviagationBarProfileButtonView()
+                            }
+                            
+                            ToolbarItem(placement: .navigationBarTrailing) {
+                                NaviagationBarFilterButtonView(showingDetail: self.$showingDetail)
+                            }
+                        }
 
                 }
             }
         }
+            .sheet(isPresented: self.$showingDetail) {
+                FilterView(showingDetail: self.$showingDetail, filter: self.$filter, memberViewModel: self.memberViewModel)
+            }
             .navigationViewStyle(StackNavigationViewStyle())
     }
 
@@ -90,7 +95,7 @@ struct MemberPageContentView: View {
 struct NaviagationBarProfileButtonView: View {
     var body: some View {
         Button(action: {
-            print("Profile button is touched!")
+//            print("Profile button is touched!")
         }, label: {
             Image(systemName: "person.circle")
                 .font(.system(size: 25))
@@ -102,8 +107,6 @@ struct NaviagationBarProfileButtonView: View {
 
 struct NaviagationBarFilterButtonView: View {
     @Binding var showingDetail: Bool
-    @Binding var filter: FilterInfo
-    @StateObject var memberViewModel: MemberViewModel
 
     var body: some View {
         Button(action: {
@@ -114,9 +117,6 @@ struct NaviagationBarFilterButtonView: View {
                 .font(.system(size: 25))
         })
             .frame(minWidth: 30, maxWidth: .infinity, minHeight: 30)
-            .sheet(isPresented: self.$showingDetail) {
-                FilterView(showingDatail: self.$showingDetail, filter: self.$filter, memberViewModel: self.memberViewModel)
-            }
     }
 
 }
