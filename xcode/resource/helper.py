@@ -7,6 +7,113 @@ import requests
 from bs4 import BeautifulSoup as BeautifulSoup
 from requests.adapters import HTTPAdapter
 
+dir_path = os.path.dirname(os.path.realpath(__file__))
+song_json = {}
+num_single = 25
+
+def get_song_json():
+    get_single_json()
+
+
+
+def get_single_json():
+    single_json = []
+    for i in range(num_single):
+        url = 'http://skymotors.boy.jp/n46/cd/single' + str(i + 1).zfill(3) + '.html'
+        req = urllib.request.Request(url, headers={'User-Agent': "Magic Browser"})
+        resp = urllib.request.urlopen(req)
+        html = resp.read()
+        bs = BeautifulSoup(html, "html.parser")
+        single_dict = {}
+        meta = bs.find_all('font')[0].get_text().split("「")
+        year = bs.body.contents[9].split("。")[1]
+        i = year.index("日")
+        year = year[:i + 1]
+        single_dict['title'] = meta[1][:-1]
+        single_dict['order'] = "".join(filter(str.isdigit, meta[0]))
+        single_dict['release_year'] = year
+
+        single_dict['cover_name'] = []
+        single_dict['cover_url'] = []
+
+        for img in bs.find_all('img'):
+            u = img.attrs['src']
+            if '.jpg' in u:
+                cover_url = 'http://skymotors.boy.jp/n46' + u[2:]
+                single_dict['cover_url'].append(cover_url)
+
+                cover_name = u[u.rindex('/') + 1:]
+                single_dict['cover_name'] = cover_name
+
+                cover_path = os.path.join(dir_path, cover_name)
+                # if not download_one_file(cover_url, cover_path):
+                #     continue
+
+        single_dict['center'] = []
+        single_dict['fukujin'] = []
+        single_dict['senbatsu'] = []
+        single_dict['under'] = []
+
+        for member in bs.find_all('table')[1].find_all('tr'):
+            z = member.contents
+            if len(z) == 2:
+                member_name = z[0].get_text()
+                level = z[1].img.attrs['src']
+                if 'center' in level:
+                    single_dict['center'].append(member_name)
+                elif 'fukujin' in level:
+                    single_dict['fukujin'].append(member_name)
+                elif 'senbatsu' in level:
+                    single_dict['senbatsu'].append(member_name)
+                elif 'under' in level:
+                    single_dict['under'].append(member_name)
+
+        single_dict['songs'] = []
+        for song in bs.find_all('table'):
+            song_dict = {}
+            if 'rules' in song.attrs and song.attrs['rules'] == 'none' and 'border' in song.attrs and song.attrs['border'] == '2':
+                for tr in song.find_all('tr'):
+                    for td in tr.find_all('td'):
+                        if 'width' in td.attrs:
+                            song_dict['song_name'] = td.get_text()
+                            print(song_dict['song_name'])
+                            break
+                        elif 'colspan' in td.attrs and td.attrs['colspan'] == '5':
+                            song_dict['song_center'] = []
+                            song_dict['song_members'] = []
+
+                            song_center = td.div.contents[0]
+
+                            for ele in td.div.contents:
+                                if '<br/>' in ele:
+                                    continue
+                                # ele = ele.replace('\n', '')
+                                if 'センター' in song_center:
+                                    # print(song_center)
+                                    l = song_center.rindex('：')
+                                    r = song_center.rindex('）')
+                                    song_center = song_center[l + 1:r].split('、')
+                                    song_dict['song_center'] = song_center
+
+                                elif isinstance(ele, str) and ele:
+                                    # print(ele)
+                                    ele = ele.replace('\n', '').split('：')[-1].strip().split('、')
+                                    for e in ele:
+                                        if e:
+                                            song_dict['song_members'].append(e)
+                
+            if song_dict:
+                single_dict['songs'].append(song_dict)
+        single_json.append(single_dict)
+
+    song_json['singles'] = single_json
+
+    with open('nogizaka_songs.json', 'w') as f:
+        json.dump(song_json, f, indent=4, ensure_ascii=False)
+
+
+
+
 member_list = []
 member_json = []
 update_json = False
@@ -116,4 +223,5 @@ def download_one_file(url, file_path):
 
 
 if __name__ == "__main__":
-    get_member_resource()
+    # get_member_resource()
+    get_song_json()
