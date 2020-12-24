@@ -9,7 +9,7 @@ from bs4 import BeautifulSoup as BeautifulSoup
 from requests.adapters import HTTPAdapter
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
-song_json = {}
+song_json = []
 num_single = 25
 
 def get_song_json():
@@ -18,7 +18,7 @@ def get_song_json():
 
 
 def get_single_json():
-    single_json = []
+    # single_json = []
     for i in range(num_single):
         url = 'http://skymotors.boy.jp/n46/cd/single' + str(i + 1).zfill(3) + '.html'
         req = urllib.request.Request(url, headers={'User-Agent': "Magic Browser"})
@@ -32,8 +32,9 @@ def get_single_json():
         year = year[:i + 1]
         res = re.sub('[^0-9]', '/', year).split('/')
         res = str(res[0]).zfill(4) + '/' + str(res[1]).zfill(2) + '/' + str(res[2]).zfill(2)
+        single_dict['type'] = 'single'
         single_dict['title'] = meta[1][:-1]
-        single_dict['order'] = "".join(filter(str.isdigit, meta[0]))
+        single_dict['order'] = int("".join(filter(str.isdigit, meta[0])))
         single_dict['release_date'] = res
 
         single_dict['cover_name'] = []
@@ -107,9 +108,9 @@ def get_single_json():
                 
             if song_dict:
                 single_dict['songs'].append(song_dict)
-        single_json.append(single_dict)
+        song_json.append(single_dict)
 
-    song_json['singles'] = single_json
+    # song_json.append(single_json)
 
     with open('nogizaka_songs.json', 'w') as f:
         json.dump(song_json, f, indent=4, ensure_ascii=False)

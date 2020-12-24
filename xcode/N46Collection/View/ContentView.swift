@@ -15,11 +15,18 @@ struct ContentView: View {
         TabView {
 //            MemberSearchView(view: MemberPageView())
             MemberPageView()
-                .ignoresSafeArea()
+//                .ignoresSafeArea()
                 .tabItem {
                     Image(systemName: "person.3")
                         .font(.headline)
                     Text(LocalizedStringKey("メンバー"))
+                }
+            
+            SongPageView()
+                .tabItem {
+                    Image(systemName: "tv.music.note")
+                        .font(.headline)
+                    Text(LocalizedStringKey("歌曲"))
                 }
             
             Text("news")

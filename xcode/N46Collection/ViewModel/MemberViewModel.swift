@@ -24,10 +24,6 @@ class MemberViewModel: ObservableObject {
 
     // MARK: - Intent(s)
 
-    func choose(card: MemberModel.Card) {
-        model.choose(card: card)
-    }
-
     func filterMembers(filter: FilterInfo) {
         model.filterMembers(filter: filter)
     }
@@ -42,6 +38,6 @@ func createMembers() -> MemberModel {
 }
 
 func getInfo() -> [NogizakaMember] {
-    let members = getJsonData()!
+    let members = getNogizakaMemberJsonData(forName: "nogizaka_members")!
     return members
 }

@@ -10,6 +10,7 @@ import Foundation
 
 struct MemberModel {
     private(set) var cards: [Card]
+    private var memberCard = [String : Card]()
 
     var displayCards: [Card] {
         cards.filter {
@@ -17,11 +18,6 @@ struct MemberModel {
         }
     }
 
-    mutating func choose(card: Card) {
-        //        print("\(card) is chosen!")
-        let index = self.cards.firstIndex(matching: card)
-        cards[index!].flipFace()
-    }
 
     mutating func hide(card: Card) {
         //        print("\(card) is hide!")
@@ -119,25 +115,23 @@ struct MemberModel {
 
     init(numsOfPairsOfCards: Int, cardContentFactory: (Int) -> NogizakaMember) {
         self.cards = [Card]()
+        
         for pairIndex in 0..<numsOfPairsOfCards {
             let content = cardContentFactory(pairIndex)
-            self.cards.append(Card(content: content, id: pairIndex))
+            let card = Card(content: content, id: pairIndex)
+            self.cards.append(card)
+            let trimmed = card.content.member_info.infos.kanji_name.filter { !$0.isWhitespace }
+            self.memberCard[trimmed] = card
         }
 
     }
 
 
     struct Card: Identifiable {
-        var isFaceUp: Bool = true
-        var isMatched: Bool = false
         var isHidden = false
 
         var content: NogizakaMember
         var id: Int
-
-        mutating func flipFace() {
-            isFaceUp.toggle()
-        }
 
         mutating func hide() {
             isHidden = true

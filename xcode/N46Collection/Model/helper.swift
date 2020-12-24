@@ -33,14 +33,21 @@ struct NogizakaMember: Codable {
 }
 
 struct NogizakaSong: Codable {
-    let singles: [NogizakaSingle]
+    let type: String
+    let title: String
+    let order: Int
+    let release_date: String
+    let cover_name: String
+    let cover_url: [String]
+    let center: [String]
+    let fukujin: [String]
+    let senbatsu: [String]
+    let under: [String]
     
-    struct NogizakaSingle: Codable {
-        let title: String
-        let order: Int
-        let release_date: String
-        let cover_name: String
-        
+    let songs: [Song]
+    struct Song: Codable {
+        let song_name: String
+        let song_center: [String]
     }
 }
 
@@ -60,12 +67,18 @@ func readLocalFile(forName name: String) -> Data? {
     return nil
 }
 
-func getJsonData() -> [NogizakaMember]? {
+func getNogizakaMemberJsonData(forName name: String) -> [NogizakaMember]? {
     let jsonDecoder = JSONDecoder()
-    let jsonData = readLocalFile(forName: "nogizaka_members")
-    print(jsonData!)
+    let jsonData = readLocalFile(forName: name)
     let modelObject = try? jsonDecoder.decode([NogizakaMember].self, from: jsonData!)
-//    print(modelObject!)
+    return modelObject
+}
+
+func getNogizakaSongJsonData(forName name: String) -> [NogizakaSong]? {
+    let jsonDecoder = JSONDecoder()
+    let jsonData = readLocalFile(forName: name)
+    print(jsonData)
+    let modelObject = try? jsonDecoder.decode([NogizakaSong].self, from: jsonData!)
     return modelObject
 }
 
