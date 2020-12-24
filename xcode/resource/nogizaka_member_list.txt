@@ -10,12 +10,10 @@ VM4758:2 kuboshiori
 VM4758:2 saitouasuka
 VM4758:2 sakaguchitamami
 VM4758:2 satoukaede
-VM4758:2 shiraishimai
 VM4758:2 shinuchimai
 VM4758:2 suzukiayane
 VM4758:2 takayamakazumi
 VM4758:2 teradaranze
-VM4758:2 nakadakana
 VM4758:2 nakamurareno
 VM4758:2 higuchihina
 VM4758:2 hoshinominami

@@ -24,7 +24,8 @@
 		A6EA0FF1249C0436000F1142 /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EA0FF0249C0436000F1142 /* Cardify.swift */; };
 		A6EA0FF3249C18AE000F1142 /* MemberPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EA0FF2249C18AE000F1142 /* MemberPageView.swift */; };
 		A6FDBE3A24834876000B6888 /* helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FDBE3924834876000B6888 /* helper.swift */; };
-		A6FDBE3D24835AA5000B6888 /* Nogizaka_members.json in Resources */ = {isa = PBXBuildFile; fileRef = A6FDBE3C24835AA5000B6888 /* Nogizaka_members.json */; };
+		C984B6A625949765006AFB1F /* nogizaka_songs.json in Resources */ = {isa = PBXBuildFile; fileRef = C984B6A525949765006AFB1F /* nogizaka_songs.json */; };
+		C984B6B22594A95E006AFB1F /* nogizaka_members.json in Resources */ = {isa = PBXBuildFile; fileRef = C984B6B12594A95E006AFB1F /* nogizaka_members.json */; };
 		C9E116002591EC3500295579 /* NogiColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E115FF2591EC3500295579 /* NogiColor.swift */; };
 		C9E1160325920CD200295579 /* MemberSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E1160225920CD200295579 /* MemberSearchView.swift */; };
 /* End PBXBuildFile section */
@@ -51,7 +52,8 @@
 		A6EA0FF0249C0436000F1142 /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
 		A6EA0FF2249C18AE000F1142 /* MemberPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberPageView.swift; sourceTree = "<group>"; };
 		A6FDBE3924834876000B6888 /* helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helper.swift; sourceTree = "<group>"; };
-		A6FDBE3C24835AA5000B6888 /* Nogizaka_members.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Nogizaka_members.json; sourceTree = "<group>"; };
+		C984B6A525949765006AFB1F /* nogizaka_songs.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = nogizaka_songs.json; sourceTree = "<group>"; };
+		C984B6B12594A95E006AFB1F /* nogizaka_members.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = nogizaka_members.json; sourceTree = "<group>"; };
 		C9E115FF2591EC3500295579 /* NogiColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NogiColor.swift; sourceTree = "<group>"; };
 		C9E1160225920CD200295579 /* MemberSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberSearchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,8 +97,9 @@
 				A60F43CA24AAB2900085E045 /* MemberModel.swift */,
 				A6BA5D56249EA9F9008F294C /* FilterInfo.swift */,
 				A6FDBE3924834876000B6888 /* helper.swift */,
-				A6FDBE3C24835AA5000B6888 /* Nogizaka_members.json */,
 				C9E115FF2591EC3500295579 /* NogiColor.swift */,
+				C984B6A525949765006AFB1F /* nogizaka_songs.json */,
+				C984B6B12594A95E006AFB1F /* nogizaka_members.json */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -205,9 +208,10 @@
 			files = (
 				A60F43D824AC03080085E045 /* Localizable.strings in Resources */,
 				A694F7732473EF35006E38B4 /* LaunchScreen.storyboard in Resources */,
+				C984B6A625949765006AFB1F /* nogizaka_songs.json in Resources */,
+				C984B6B22594A95E006AFB1F /* nogizaka_members.json in Resources */,
 				A694F7702473EF35006E38B4 /* Preview Assets.xcassets in Resources */,
 				A694F76D2473EF35006E38B4 /* Assets.xcassets in Resources */,
-				A6FDBE3D24835AA5000B6888 /* Nogizaka_members.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,7 +400,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_ASSET_PATHS = "\"N46Collection/Preview Content\"";
 				DEVELOPMENT_TEAM = N3T5ZUL6Y7;
 				ENABLE_HARDENED_RUNTIME = NO;
@@ -406,6 +410,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sunkashing.N46collection;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -421,7 +426,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_ASSET_PATHS = "\"N46Collection/Preview Content\"";
 				DEVELOPMENT_TEAM = N3T5ZUL6Y7;
 				ENABLE_HARDENED_RUNTIME = NO;
@@ -431,6 +436,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sunkashing.N46collection;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

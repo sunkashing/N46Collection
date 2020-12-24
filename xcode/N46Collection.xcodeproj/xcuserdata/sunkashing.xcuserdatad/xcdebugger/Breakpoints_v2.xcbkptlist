@@ -148,5 +148,101 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "12CE0591-FE18-4651-8CF3-5538DA21E647"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "N46Collection/Model/helper.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "readLocalFile(forName:)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "12CE0591-FE18-4651-8CF3-5538DA21E647 - 5387fbbc165efacd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "N46Collection.readLocalFile(forName: Swift.String) -&gt; Swift.Optional&lt;Foundation.Data&gt;"
+                  moduleName = "N46Collection"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sunkashing/Library/Mobile%20Documents/com~apple~CloudDocs/Github%20Projects/N46Collection/xcode/N46Collection/Model/helper.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "688">
+               </Location>
+               <Location
+                  uuid = "12CE0591-FE18-4651-8CF3-5538DA21E647 - 5387fbbc165efacd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "N46Collection.readLocalFile(forName: Swift.String) -&gt; Swift.Optional&lt;Foundation.Data&gt;"
+                  moduleName = "N46Collection"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sunkashing/Library/Mobile%20Documents/com~apple~CloudDocs/Github%20Projects/N46Collection/xcode/N46Collection/Model/helper.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "1188">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F12103C4-1420-4A03-96E2-88B92EC8D8AD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "N46Collection/Model/helper.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "readLocalFile(forName:)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "F12103C4-1420-4A03-96E2-88B92EC8D8AD - 5387fbbc165efacd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "N46Collection.readLocalFile(forName: Swift.String) -&gt; Swift.Optional&lt;Foundation.Data&gt;"
+                  moduleName = "N46Collection"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sunkashing/Library/Mobile%20Documents/com~apple~CloudDocs/Github%20Projects/N46Collection/xcode/N46Collection/Model/helper.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "688">
+               </Location>
+               <Location
+                  uuid = "F12103C4-1420-4A03-96E2-88B92EC8D8AD - 5387fbbc165efacd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "N46Collection.readLocalFile(forName: Swift.String) -&gt; Swift.Optional&lt;Foundation.Data&gt;"
+                  moduleName = "N46Collection"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sunkashing/Library/Mobile%20Documents/com~apple~CloudDocs/Github%20Projects/N46Collection/xcode/N46Collection/Model/helper.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "1188">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

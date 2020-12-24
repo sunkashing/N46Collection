@@ -2,6 +2,7 @@ import json
 import os
 import traceback
 import urllib.request
+import re
 
 import requests
 from bs4 import BeautifulSoup as BeautifulSoup
@@ -29,9 +30,11 @@ def get_single_json():
         year = bs.body.contents[9].split("。")[1]
         i = year.index("日")
         year = year[:i + 1]
+        res = re.sub('[^0-9]', '/', year).split('/')
+        res = str(res[0]).zfill(4) + '/' + str(res[1]).zfill(2) + '/' + str(res[2]).zfill(2)
         single_dict['title'] = meta[1][:-1]
         single_dict['order'] = "".join(filter(str.isdigit, meta[0]))
-        single_dict['release_year'] = year
+        single_dict['release_date'] = res
 
         single_dict['cover_name'] = []
         single_dict['cover_url'] = []
@@ -116,19 +119,19 @@ def get_single_json():
 
 member_list = []
 member_json = []
-update_json = False
+update_json = True
 
 
 def get_member_resource():
     if update_json:
         get_member_name()
         get_member_json()
-    download_official_picture()
+    # download_official_picture()
 
 
 def download_official_picture():
     if not update_json:
-        with open('Nogizaka_members.json', 'r') as f:
+        with open('nogizaka_members.json', 'r') as f:
             member_json = json.load(fp=f)
     for member in member_json:
         member_val = list(member.values())[1]
@@ -137,8 +140,8 @@ def download_official_picture():
         dir_path = os.path.dirname(os.path.realpath(__file__))
         file_path = os.path.join(dir_path, file_name)
 
-        if not download_one_file(member_val['picture_url'], file_path):
-            continue
+        # if not download_one_file(member_val['picture_url'], file_path):
+        #     continue
 
 
 def get_member_name():
@@ -155,6 +158,7 @@ def get_member_json():
     for member in member_list:
         url = 'http://www.nogizaka46.com/member/detail/' + member + '.php'
         req = urllib.request.Request(url, headers={'User-Agent': "Magic Browser"})
+        print(url)
         resp = urllib.request.urlopen(req)
         html = resp.read()
         bs = BeautifulSoup(html, "html.parser")
@@ -190,7 +194,10 @@ def get_member_infos(bs, member_dict):
     member_infos_values = bs.find_all('div', class_='txt')[0].dl.find_all('dd')
     for info in member_infos_keys:
         if info.get_text() == '生年月日：':
-            member_dict['member_info']['infos']['birthday'] = member_infos_values[0].get_text()
+            res = re.sub('[^0-9]', '/', member_infos_values[0].get_text()).split('/')
+            birthday = str(res[0]).zfill(4) + '/' + str(res[1]).zfill(2) + '/' + str(res[2]).zfill(2)
+
+            member_dict['member_info']['infos']['birthday'] = birthday
         elif info.get_text() == '血液型：':
             member_dict['member_info']['infos']['blood_type'] = member_infos_values[1].get_text()
         elif info.get_text() == '星座：':
