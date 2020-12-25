@@ -87,12 +87,12 @@ struct MemberPageContentView: View {
     var body: some View {
         LazyVGrid(columns: vGridLayout) {
             ForEach(self.memberViewModel.cards) { card in
-                CardView(card: card, vGridLayout: self.$vGridLayout).onTapGesture {
-                }
+                CardView(card: card, vGridLayout: self.$vGridLayout)
                 .padding()
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+//        .padding()
     }
 }
 

@@ -1,10 +1,15 @@
 [
     {
-        "type": "single",
+        "type": "シングル",
         "title": "ぐるぐるカーテン",
         "order": 1,
         "release_date": "2012/02/22",
-        "cover_name": "s001_t.jpg",
+        "cover_name": [
+            "s001_a",
+            "s001_b",
+            "s001_c",
+            "s001_t"
+        ],
         "cover_url": [
             "http://skymotors.boy.jp/n46/image21/s001_a.jpg",
             "http://skymotors.boy.jp/n46/image21/s001_b.jpg",
@@ -233,11 +238,16 @@
         ]
     },
     {
-        "type": "single",
+        "type": "シングル",
         "title": "おいでシャンプー",
         "order": 2,
         "release_date": "2012/05/02",
-        "cover_name": "s002_t.jpg",
+        "cover_name": [
+            "s002_a",
+            "s002_b",
+            "s002_c",
+            "s002_t"
+        ],
         "cover_url": [
             "http://skymotors.boy.jp/n46/image21/s002_a.jpg",
             "http://skymotors.boy.jp/n46/image21/s002_b.jpg",
@@ -412,11 +422,16 @@
         ]
     },
     {
-        "type": "single",
+        "type": "シングル",
         "title": "走れ!Bicycle",
         "order": 3,
         "release_date": "2012/08/22",
-        "cover_name": "s003_t.jpg",
+        "cover_name": [
+            "s003_a",
+            "s003_b",
+            "s003_c",
+            "s003_t"
+        ],
         "cover_url": [
             "http://skymotors.boy.jp/n46/image21/s003_a.jpg",
             "http://skymotors.boy.jp/n46/image21/s003_b.jpg",
@@ -612,11 +627,17 @@
         ]
     },
     {
-        "type": "single",
+        "type": "シングル",
         "title": "制服のマネキン",
         "order": 4,
         "release_date": "2012/12/19",
-        "cover_name": "s004_o.jpg",
+        "cover_name": [
+            "s004_a",
+            "s004_b",
+            "s004_c",
+            "s004_t",
+            "s004_o"
+        ],
         "cover_url": [
             "http://skymotors.boy.jp/n46/image21/s004_a.jpg",
             "http://skymotors.boy.jp/n46/image21/s004_b.jpg",
@@ -775,11 +796,16 @@
         ]
     },
     {
-        "type": "single",
+        "type": "シングル",
         "title": "君の名は希望",
         "order": 5,
         "release_date": "2013/03/13",
-        "cover_name": "s005_t.jpg",
+        "cover_name": [
+            "s005_a",
+            "s005_b",
+            "s005_c",
+            "s005_t"
+        ],
         "cover_url": [
             "http://skymotors.boy.jp/n46/image21/s005_a.jpg",
             "http://skymotors.boy.jp/n46/image21/s005_b.jpg",
@@ -956,11 +982,16 @@
         ]
     },
     {
-        "type": "single",
+        "type": "シングル",
         "title": "ガールズルール",
         "order": 6,
         "release_date": "2013/07/03",
-        "cover_name": "s006_t.jpg",
+        "cover_name": [
+            "s006_a",
+            "s006_b",
+            "s006_c",
+            "s006_t"
+        ],
         "cover_url": [
             "http://skymotors.boy.jp/n46/image21/s006_a.jpg",
             "http://skymotors.boy.jp/n46/image21/s006_b.jpg",
@@ -1148,11 +1179,17 @@
         ]
     },
     {
-        "type": "single",
+        "type": "シングル",
         "title": "バレッタ",
         "order": 7,
         "release_date": "2013/11/27",
-        "cover_name": "s007_o.jpg",
+        "cover_name": [
+            "s007_a",
+            "s007_b",
+            "s007_c",
+            "s007_t",
+            "s007_o"
+        ],
         "cover_url": [
             "http://skymotors.boy.jp/n46/image21/s007_a.jpg",
             "http://skymotors.boy.jp/n46/image21/s007_b.jpg",
@@ -1332,11 +1369,16 @@
         ]
     },
     {
-        "type": "single",
+        "type": "シングル",
         "title": "気づいたら片想い",
         "order": 8,
         "release_date": "2014/04/02",
-        "cover_name": "s008_t.jpg",
+        "cover_name": [
+            "s008_a",
+            "s008_b",
+            "s008_c",
+            "s008_t"
+        ],
         "cover_url": [
             "http://skymotors.boy.jp/n46/image21/s008_a.jpg",
             "http://skymotors.boy.jp/n46/image21/s008_b.jpg",
@@ -1512,11 +1554,16 @@
         ]
     },
     {
-        "type": "single",
+        "type": "シングル",
         "title": "夏のFree&Easy",
         "order": 9,
         "release_date": "2014/07/09",
-        "cover_name": "s009_t.jpg",
+        "cover_name": [
+            "s009_a",
+            "s009_b",
+            "s009_c",
+            "s009_t"
+        ],
         "cover_url": [
             "http://skymotors.boy.jp/n46/image21/s009_a.jpg",
             "http://skymotors.boy.jp/n46/image21/s009_b.jpg",
@@ -1691,11 +1738,16 @@
         ]
     },
     {
-        "type": "single",
+        "type": "シングル",
         "title": "何度目の青空か?",
         "order": 10,
         "release_date": "2014/10/08",
-        "cover_name": "s010_t.jpg",
+        "cover_name": [
+            "s010_a",
+            "s010_b",
+            "s010_c",
+            "s010_t"
+        ],
         "cover_url": [
             "http://skymotors.boy.jp/n46/image21/s010_a.jpg",
             "http://skymotors.boy.jp/n46/image21/s010_b.jpg",
@@ -1873,11 +1925,16 @@
         ]
     },
     {
-        "type": "single",
+        "type": "シングル",
         "title": "命は美しい",
         "order": 11,
         "release_date": "2015/03/18",
-        "cover_name": "s011_t.jpg",
+        "cover_name": [
+            "s011_a",
+            "s011_b",
+            "s011_c",
+            "s011_t"
+        ],
         "cover_url": [
             "http://skymotors.boy.jp/n46/image21/s011_a.jpg",
             "http://skymotors.boy.jp/n46/image21/s011_b.jpg",
@@ -2034,11 +2091,17 @@
         ]
     },
     {
-        "type": "single",
+        "type": "シングル",
         "title": "太陽ノック",
         "order": 12,
         "release_date": "2015/07/22",
-        "cover_name": "s012_t.jpg",
+        "cover_name": [
+            "s012_a",
+            "s012_b",
+            "s012_c",
+            "s012_s",
+            "s012_t"
+        ],
         "cover_url": [
             "http://skymotors.boy.jp/n46/image21/s012_a.jpg",
             "http://skymotors.boy.jp/n46/image21/s012_b.jpg",
@@ -2206,11 +2269,17 @@
         ]
     },
     {
-        "type": "single",
+        "type": "シングル",
         "title": "今、話したい誰かがいる",
         "order": 13,
         "release_date": "2015/10/28",
-        "cover_name": "s013_k.jpg",
+        "cover_name": [
+            "s013_a",
+            "s013_b",
+            "s013_c",
+            "s013_t",
+            "s013_k"
+        ],
         "cover_url": [
             "http://skymotors.boy.jp/n46/image21/s013_a.jpg",
             "http://skymotors.boy.jp/n46/image21/s013_b.jpg",
@@ -2403,11 +2472,17 @@
         ]
     },
     {
-        "type": "single",
+        "type": "シングル",
         "title": "ハルジオンが咲く頃",
         "order": 14,
         "release_date": "2016/03/23",
-        "cover_name": "s014_t.jpg",
+        "cover_name": [
+            "s014_a",
+            "s014_b",
+            "s014_c",
+            "s014_d",
+            "s014_t"
+        ],
         "cover_url": [
             "http://skymotors.boy.jp/n46/image21/s014_a.jpg",
             "http://skymotors.boy.jp/n46/image21/s014_b.jpg",
@@ -2567,11 +2642,17 @@
         ]
     },
     {
-        "type": "single",
+        "type": "シングル",
         "title": "裸足でSummer",
         "order": 15,
         "release_date": "2016/07/27",
-        "cover_name": "s015_t.jpg",
+        "cover_name": [
+            "s015_a",
+            "s015_b",
+            "s015_c",
+            "s015_d",
+            "s015_t"
+        ],
         "cover_url": [
             "http://skymotors.boy.jp/n46/image21/s015_a.jpg",
             "http://skymotors.boy.jp/n46/image21/s015_b.jpg",
@@ -2737,11 +2818,17 @@
         ]
     },
     {
-        "type": "single",
+        "type": "シングル",
         "title": "サヨナラの意味",
         "order": 16,
         "release_date": "2016/11/09",
-        "cover_name": "s016_t.jpg",
+        "cover_name": [
+            "s016_a",
+            "s016_b",
+            "s016_c",
+            "s016_d",
+            "s016_t"
+        ],
         "cover_url": [
             "http://skymotors.boy.jp/n46/image21/s016_a.jpg",
             "http://skymotors.boy.jp/n46/image21/s016_b.jpg",
@@ -2914,11 +3001,17 @@
         ]
     },
     {
-        "type": "single",
+        "type": "シングル",
         "title": "インフルエンサー",
         "order": 17,
         "release_date": "2017/03/22",
-        "cover_name": "s017_t.jpg",
+        "cover_name": [
+            "s017_a",
+            "s017_b",
+            "s017_c",
+            "s017_d",
+            "s017_t"
+        ],
         "cover_url": [
             "http://skymotors.boy.jp/n46/image21/s017_a.jpg",
             "http://skymotors.boy.jp/n46/image21/s017_b.jpg",
@@ -3082,11 +3175,17 @@
         ]
     },
     {
-        "type": "single",
+        "type": "シングル",
         "title": "逃げ水",
         "order": 18,
         "release_date": "2017/08/09",
-        "cover_name": "s018_t.jpg",
+        "cover_name": [
+            "s018_a",
+            "s018_b",
+            "s018_c",
+            "s018_d",
+            "s018_t"
+        ],
         "cover_url": [
             "http://skymotors.boy.jp/n46/image21/s018_a.jpg",
             "http://skymotors.boy.jp/n46/image21/s018_b.jpg",
@@ -3317,11 +3416,17 @@
         ]
     },
     {
-        "type": "single",
+        "type": "シングル",
         "title": "いつかできるから今日できる",
         "order": 19,
         "release_date": "2017/10/11",
-        "cover_name": "s019_t.jpg",
+        "cover_name": [
+            "s019_a",
+            "s019_b",
+            "s019_c",
+            "s019_d",
+            "s019_t"
+        ],
         "cover_url": [
             "http://skymotors.boy.jp/n46/image21/s019_a.jpg",
             "http://skymotors.boy.jp/n46/image21/s019_b.jpg",
@@ -3500,11 +3605,17 @@
         ]
     },
     {
-        "type": "single",
+        "type": "シングル",
         "title": "シンクロニシティ",
         "order": 20,
         "release_date": "2018/04/25",
-        "cover_name": "s020_t.jpg",
+        "cover_name": [
+            "s020_a",
+            "s020_b",
+            "s020_c",
+            "s020_d",
+            "s020_t"
+        ],
         "cover_url": [
             "http://skymotors.boy.jp/n46/image21/s020_a.jpg",
             "http://skymotors.boy.jp/n46/image21/s020_b.jpg",
@@ -3710,11 +3821,17 @@
         ]
     },
     {
-        "type": "single",
+        "type": "シングル",
         "title": "ジコチューで行こう!",
         "order": 21,
         "release_date": "2018/08/08",
-        "cover_name": "s021_t.jpg",
+        "cover_name": [
+            "s021_a",
+            "s021_b",
+            "s021_c",
+            "s021_d",
+            "s021_t"
+        ],
         "cover_url": [
             "http://skymotors.boy.jp/n46/image21/s021_a.jpg",
             "http://skymotors.boy.jp/n46/image21/s021_b.jpg",
@@ -3917,11 +4034,17 @@
         ]
     },
     {
-        "type": "single",
+        "type": "シングル",
         "title": "帰り道は遠回りしたくなる",
         "order": 22,
         "release_date": "2018/11/14",
-        "cover_name": "s022_t.jpg",
+        "cover_name": [
+            "s022_a",
+            "s022_b",
+            "s022_c",
+            "s022_d",
+            "s022_t"
+        ],
         "cover_url": [
             "http://skymotors.boy.jp/n46/image21/s022_a.jpg",
             "http://skymotors.boy.jp/n46/image21/s022_b.jpg",
@@ -4097,11 +4220,17 @@
         ]
     },
     {
-        "type": "single",
+        "type": "シングル",
         "title": "Sing Out!",
         "order": 23,
         "release_date": "2019/05/29",
-        "cover_name": "s023_t.jpg",
+        "cover_name": [
+            "s023_a",
+            "s023_b",
+            "s023_c",
+            "s023_d",
+            "s023_t"
+        ],
         "cover_url": [
             "http://skymotors.boy.jp/n46/image21/s023_a.jpg",
             "http://skymotors.boy.jp/n46/image21/s023_b.jpg",
@@ -4259,11 +4388,17 @@
         ]
     },
     {
-        "type": "single",
+        "type": "シングル",
         "title": "夜明けまで強がらなくてもいい",
         "order": 24,
         "release_date": "2019/09/04",
-        "cover_name": "s024_t.jpg",
+        "cover_name": [
+            "s024_a",
+            "s024_b",
+            "s024_c",
+            "s024_d",
+            "s024_t"
+        ],
         "cover_url": [
             "http://skymotors.boy.jp/n46/image21/s024_a.jpg",
             "http://skymotors.boy.jp/n46/image21/s024_b.jpg",
@@ -4456,11 +4591,17 @@
         ]
     },
     {
-        "type": "single",
+        "type": "シングル",
         "title": "しあわせの保護色",
         "order": 25,
         "release_date": "2020/03/25",
-        "cover_name": "s025_t.jpg",
+        "cover_name": [
+            "s025_a",
+            "s025_b",
+            "s025_c",
+            "s025_d",
+            "s025_t"
+        ],
         "cover_url": [
             "http://skymotors.boy.jp/n46/image21/s025_a.jpg",
             "http://skymotors.boy.jp/n46/image21/s025_b.jpg",

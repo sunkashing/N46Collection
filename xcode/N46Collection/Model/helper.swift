@@ -37,7 +37,7 @@ struct NogizakaSong: Codable {
     let title: String
     let order: Int
     let release_date: String
-    let cover_name: String
+    let cover_name: [String]
     let cover_url: [String]
     let center: [String]
     let fukujin: [String]
@@ -77,7 +77,7 @@ func getNogizakaMemberJsonData(forName name: String) -> [NogizakaMember]? {
 func getNogizakaSongJsonData(forName name: String) -> [NogizakaSong]? {
     let jsonDecoder = JSONDecoder()
     let jsonData = readLocalFile(forName: name)
-    print(jsonData)
+//    print(jsonData)
     let modelObject = try? jsonDecoder.decode([NogizakaSong].self, from: jsonData!)
     return modelObject
 }

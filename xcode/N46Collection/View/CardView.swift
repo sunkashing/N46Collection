@@ -17,64 +17,56 @@ struct CardView: View {
 
     var body: some View {
         ZStack {
-            Button(action: {
-                self.showingDetail.toggle()
-            }, label: {
-                    if self.vGridLayout.count == 2 {
-                        VStack {
-                            ZStack {
-                                Image(self.card.content.member_info.picture_name)
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .cornerRadius(15)
-                                    .frame(maxWidth: 170)
-                            }
-                            Text(LocalizedStringKey(self.card.content.member_info.infos.kanji_name))
-                                .fontWeight(.heavy)
-                        }
-                    } else {
-                        HStack {
-                            ZStack {
-                                Image(self.card.content.member_info.picture_name)
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .cornerRadius(15)
-                                    .frame(maxWidth: 170)
-                            }
-                            VStack(alignment: .leading, spacing: 10) {
-                                Text(LocalizedStringKey(self.card.content.member_info.infos.kanji_name))
-                                    .font(.title2)
-                                    .fontWeight(.bold)
-                                    .lineLimit(1)
-                                Divider()
-                                VStack(alignment: .leading, spacing: 5) {
-                                    Text(LocalizedStringKey(self.card.content.member_info.infos.birthday))
-                                        .lineLimit(1)
-                                    Text(LocalizedStringKey(self.card.content.member_info.infos.blood_type))
-                                        .lineLimit(1)
-                                    Text(LocalizedStringKey(self.card.content.member_info.infos.constellation))
-                                        .lineLimit(1)
-                                    Text(LocalizedStringKey(self.card.content.member_info.infos.height))
-                                        .lineLimit(1)
-                                    Spacer()
-                                    
-                                    MemberColorView(card: self.card)
-                                }
-//                                Spacer()
-                            }
-                                .padding()
-                            Spacer()
-                        }
-                            .background(Color(.secondarySystemBackground))
+            VStack {
+                Button(action: {
+                    self.showingDetail.toggle()
+                }, label: {
+                    HStack {
+                        Image(self.card.content.member_info.picture_name)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
                             .cornerRadius(15)
+                            .frame(maxWidth: 170)
+                        if self.vGridLayout.count != 2 {
+                                VStack(alignment: .leading, spacing: 10) {
+                                    Text(LocalizedStringKey(self.card.content.member_info.infos.kanji_name))
+                                        .font(.title2)
+                                        .fontWeight(.bold)
+                                        .lineLimit(1)
+                                    Divider()
+                                    VStack(alignment: .leading, spacing: 5) {
+                                        Text(LocalizedStringKey(self.card.content.member_info.infos.birthday))
+                                            .lineLimit(1)
+                                        Text(LocalizedStringKey(self.card.content.member_info.infos.blood_type))
+                                            .lineLimit(1)
+                                        Text(LocalizedStringKey(self.card.content.member_info.infos.constellation))
+                                            .lineLimit(1)
+                                        Text(LocalizedStringKey(self.card.content.member_info.infos.height))
+                                            .lineLimit(1)
+                                        Spacer()
+                                        
+                                        MemberColorView(card: self.card)
+                                    }
+                                }
+                                    .padding()
+                                Spacer()
+                            }
                     }
+                        .background(Color(.secondarySystemBackground))
+                        .cornerRadius(15)
                 })
 
-                    .sheet(isPresented: self.$showingDetail, content: {
-                        CardDetailView(card: self.card)
-                    })
-                    .buttonStyle(PlainButtonStyle())
-//                    .clipShape(Capsule())
+                        .sheet(isPresented: self.$showingDetail, content: {
+                            CardDetailView(card: self.card)
+                        })
+                        .buttonStyle(PlainButtonStyle())
+                
+                if self.vGridLayout.count == 2 {
+                    Text(LocalizedStringKey(self.card.content.member_info.infos.kanji_name))
+                        .fontWeight(.heavy)
+                }
+                
+            }
 
             if self.card.content.member_info.status.contains("元メンバー") {
                 VStack {

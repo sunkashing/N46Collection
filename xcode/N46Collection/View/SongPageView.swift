@@ -12,12 +12,12 @@ struct SongPageView: View {
     @StateObject var songViewModel: SongViewModel = SongViewModel()
 //    @State var filter: FilterInfo = FilterInfo()
 //    @State var showingDetail: Bool = false
-//    @State var vGridLayout = [GridItem(.adaptive(minimum: 170)), GridItem(.adaptive(minimum: 170))]
+    @State var vGridLayout = [GridItem(.adaptive(minimum: 170)), GridItem(.adaptive(minimum: 170))]
 
     var body: some View {
         NavigationView {
             ScrollView {
-                SongPageContentView(songViewModel: self.songViewModel)
+                SongPageContentView(songViewModel: self.songViewModel, vGridLayout: self.$vGridLayout)
 //                Text("hello")
             }
         }
@@ -27,9 +27,10 @@ struct SongPageView: View {
 
 struct SongPageContentView: View {
     @StateObject var songViewModel: SongViewModel
+    @Binding var vGridLayout: [GridItem]
 
     var body: some View {
-        LazyVStack(alignment: .center) {
+        LazyVGrid(columns: self.vGridLayout) {
             ForEach(self.songViewModel.cards) { card in
                 SongView(card: card).padding()
 //                Text("Hello")

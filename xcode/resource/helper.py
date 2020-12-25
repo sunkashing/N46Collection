@@ -32,7 +32,7 @@ def get_single_json():
         year = year[:i + 1]
         res = re.sub('[^0-9]', '/', year).split('/')
         res = str(res[0]).zfill(4) + '/' + str(res[1]).zfill(2) + '/' + str(res[2]).zfill(2)
-        single_dict['type'] = 'single'
+        single_dict['type'] = 'シングル'
         single_dict['title'] = meta[1][:-1]
         single_dict['order'] = int("".join(filter(str.isdigit, meta[0])))
         single_dict['release_date'] = res
@@ -47,7 +47,7 @@ def get_single_json():
                 single_dict['cover_url'].append(cover_url)
 
                 cover_name = u[u.rindex('/') + 1:]
-                single_dict['cover_name'] = cover_name
+                single_dict['cover_name'].append(cover_name[:-4])
 
                 cover_path = os.path.join(dir_path, cover_name)
                 # if not download_one_file(cover_url, cover_path):
