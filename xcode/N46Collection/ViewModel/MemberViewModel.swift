@@ -22,11 +22,18 @@ class MemberViewModel: ObservableObject {
         model.displayCards
     }
 
+
     // MARK: - Intent(s)
 
     func filterMembers(filter: FilterInfo) {
         model.filterMembers(filter: filter)
     }
+    
+    func card(name: String) -> MemberModel.Card? {
+        return model.card(name: name)
+    }
+    
+    
 
 }
 

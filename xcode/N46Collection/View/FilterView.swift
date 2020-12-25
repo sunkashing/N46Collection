@@ -51,14 +51,6 @@ struct FilterView: View {
                     Section(content: {
                         VStack {
                             Text(LocalizedStringKey("メンバーラベル"))
-//                            Picker(LocalizedStringKey("ラベル"), selection: $filter.statusType, content: {
-//                                ForEach(FilterInfo.StatusType.allCases, id: \.self) {
-//                                    Text(LocalizedStringKey($0.name))
-//                                }
-//                            })
-//                                .pickerStyle(DefaultPickerStyle())
-//                                .scaledToFit()
-//                        }
                             StatusView(filter: self.$filter)
                         }
                     })
@@ -68,24 +60,12 @@ struct FilterView: View {
                     Section(content: {
                         VStack {
                             Text(LocalizedStringKey("メンバーカラー"))
-//                            Picker(LocalizedStringKey("メンバーカラー"), selection: $filter.colorType, content: {
-//                                    ForEach(FilterInfo.ColorType.allCases, id: \.self) {
-//                                        if $0 == FilterInfo.ColorType.all {
-//                                            Text(LocalizedStringKey("全部カラー"))
-//                                        } else {
-//                                            Circle().fill($0.color)
-//                                        }
-//
-//                                    }
-//                            })
-//                                .pickerStyle(DefaultPickerStyle())
-//                                .scaledToFit()
                             ColorView(filter: self.$filter)
                             
                         }
                     })
                 }
-                .padding()
+                .padding(.vertical)
             }
             
                 .navigationTitle(LocalizedStringKey("フィルタ"))
@@ -186,11 +166,3 @@ struct ColorView: View {
 }
 
 
-
-//
-//struct FilterView_Previews: PreviewProvider {
-//    @State var showingDetail = true
-//    static var previews: some View {
-//        FilterView(showingDatail: $showingDetail)
-//    }
-//}

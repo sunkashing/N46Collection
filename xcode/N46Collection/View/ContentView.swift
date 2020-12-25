@@ -9,12 +9,13 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var memberViewModel: MemberViewModel = MemberViewModel()
 
     var body: some View {
 
         TabView {
 //            MemberSearchView(view: MemberPageView())
-            MemberPageView()
+            MemberPageView(memberViewModel: self.memberViewModel)
 //                .ignoresSafeArea()
                 .tabItem {
                     Image(systemName: "person.3")
@@ -22,7 +23,7 @@ struct ContentView: View {
                     Text(LocalizedStringKey("メンバー"))
                 }
             
-            SongPageView()
+            SongPageView(memberViewModel: self.memberViewModel)
                 .tabItem {
                     Image(systemName: "tv.music.note")
                         .font(.headline)

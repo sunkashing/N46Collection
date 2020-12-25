@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct MemberPageView: View {
-    @StateObject var memberViewModel: MemberViewModel = MemberViewModel()
+    @StateObject var memberViewModel: MemberViewModel
     @State var filter: FilterInfo = FilterInfo()
     @State var showingDetail: Bool = false
     @State var vGridLayout = [GridItem(.adaptive(minimum: 170)), GridItem(.adaptive(minimum: 170))]
@@ -28,8 +28,7 @@ struct MemberPageView: View {
                                 }
                             }
                         }) {
-                            Image(systemName: self.vGridLayout.count == 1 ?
-                                "rectangle.grid.1x2.fill" : "rectangle.grid.1x2")
+                            Image(systemName: self.vGridLayout.count == 1 ? "rectangle.grid.1x2.fill" : "rectangle.grid.1x2")
                         }
 
                         Divider()
@@ -41,30 +40,23 @@ struct MemberPageView: View {
                                 }
                             }
                         }) {
-                            Image(systemName: self.vGridLayout.count == 2 ?
-                                    "square.grid.2x2.fill" : "square.grid.2x2")
+                            Image(systemName: self.vGridLayout.count == 2 ? "square.grid.2x2.fill" : "square.grid.2x2")
                         }
                     }
                         .font(.title)
                         .padding()
 
                     MemberPageContentView(memberViewModel: self.memberViewModel, vGridLayout: self.$vGridLayout)
-                        .navigationTitle(LocalizedStringKey(filter.statusType.name))
-                        .toolbar {
-//                            ToolbarItem(placement: .navigationBarLeading) {
-//                                NaviagationBarProfileButtonView()
-//                            }
-//                            ToolbarItem(placement: .na) {
-//
-//                            }
-                            
-                            ToolbarItem(placement: .navigationBarTrailing) {
-                                NaviagationBarFilterButtonView(showingDetail: self.$showingDetail)
-                            }
-                        }
 
                 }
             }
+                .navigationTitle(LocalizedStringKey(filter.statusType.name))
+                .toolbar {
+                    
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        NaviagationBarFilterButtonView(showingDetail: self.$showingDetail)
+                    }
+                }
         }
             .sheet(isPresented: self.$showingDetail) {
                 FilterView(showingDetail: self.$showingDetail, filter: self.$filter, memberViewModel: self.memberViewModel)
@@ -126,12 +118,3 @@ struct NaviagationBarFilterButtonView: View {
 }
 
 
-
-
-
-
-struct PageView_Previews: PreviewProvider {
-    static var previews: some View {
-        MemberPageView()
-    }
-}

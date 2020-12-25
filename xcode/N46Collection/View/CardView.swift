@@ -181,6 +181,7 @@ struct CardDetailView: View {
                             }
                             .frame(width: geometry.size.width * 0.9)
                         }
+//                            .frame(maxWidth: .infinity, maxHeight: .infinity)
                     })
                 }
                     .padding(geometry.size.width * 0.05)
@@ -224,8 +225,6 @@ struct MemberColorView: View {
                         Circle().fill(NogiColor.white).frame(width: 30, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     }
                 
-//                    Circle()
-//                        .strokeBorder(Color.primary, lineWidth: 1)
                 }
                 .overlay(
                     Circle().stroke(lineWidth: 3)
@@ -234,11 +233,3 @@ struct MemberColorView: View {
         })
     }
 }
-
-
-
-//struct CardView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CardView(card: MemberViewModel().cards[0], )
-//    }
-//}

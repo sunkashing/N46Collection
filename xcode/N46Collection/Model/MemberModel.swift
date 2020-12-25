@@ -17,6 +17,10 @@ struct MemberModel {
             !$0.isHidden
         }
     }
+    
+    func card(name: String) -> Card? {
+        return memberCard[name]
+    }
 
 
     mutating func hide(card: Card) {

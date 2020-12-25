@@ -42,6 +42,9 @@ struct SongModel {
             let card = Card(content: content, id: pairIndex)
             self.cards.append(card)
         }
+        self.sortCard(by: {
+            $0.content.release_date > $1.content.release_date
+        })
     }
 
     

@@ -103,7 +103,7 @@ def get_single_json():
                                     # print(ele)
                                     ele = ele.replace('\n', '').split('：')[-1].strip().split('、')
                                     for e in ele:
-                                        if e:
+                                        if e and '※' not in e:
                                             song_dict['song_members'].append(e)
                 
             if song_dict:

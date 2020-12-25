@@ -20,4 +20,9 @@ struct NogiColor {
     static let black: Color = Color.black
     static let orange: Color = Color.orange
     static let chartreuse: Color = Color.init(red: 0.5, green: 1, blue: 0)
+    
+    static let center: Color = Color.init(red: 1, green: 0.561, blue: 0.051)
+    static let fukujin: Color = Color.init(red: 0, green: 0.757, blue: 0)
+    static let senbatsu: Color = Color.init(red: 0.8, green: 0.216, blue: 0.318)
+    static let under: Color = Color.init(red: 0.227, green: 0.722, blue: 0.969)
 }
