@@ -77,7 +77,7 @@ struct CardView: View {
                             .fontWeight(.bold)
                             .padding(10)
                             .background(NogiColor.purple)
-                            .clipShape(Capsule())
+                            .clipShape(Circle())
                             .frame(width: 40, height: 40)
                     }
                     Spacer()

@@ -162,7 +162,7 @@ struct SongSinglePositionView: View {
     let header: String
     let color: Color
     var geometry: GeometryProxy
-    @State var vGridLayout = [GridItem(.adaptive(minimum: 80)), GridItem(.adaptive(minimum: 80))]
+    @State var vGridLayout = [GridItem(.adaptive(minimum: 70)), GridItem(.adaptive(minimum: 70))]
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -170,29 +170,11 @@ struct SongSinglePositionView: View {
                 .font(.title2)
                 .foregroundColor(color)
                 .padding()
-//            ScrollView(.horizontal, showsIndicators: false) {
             LazyVGrid(columns: vGridLayout) {
                 ForEach(self.members, id: \.self) { memberName in
                     MemberPositionView(memberName: memberName, member: memberViewModel.card(name: memberName))
                 }
-//                if header == "センター" {
-//                    HStack {
-//                        ForEach(self.members, id: \.self) { memberName in
-//                            MemberPositionView(memberName: memberName, member: memberViewModel.card(name: memberName))
-//                        }
-//                    }
-//                    .padding(.horizontal)
-//                    .frame(width: geometry.size.width)
-//                } else {
-//                    HStack {
-//                        ForEach(self.members, id: \.self) { memberName in
-//                            MemberPositionView(memberName: memberName, member: memberViewModel.card(name: memberName))
-//                        }
-//                    }
-//                    .padding(.horizontal)
-//                }
             }
-//                .frame(maxWidth: .infinity)
         }
     }
 }
@@ -245,19 +227,35 @@ struct MemberPositionView: View {
 
 
     var body: some View {
-        VStack {
-            Image((self.member == nil) ? "default_member" : self.member!.content.member_info.picture_name)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-//                .clipShape(Circle())
-                .cornerRadius(5)
-                .frame(maxWidth: 90, maxHeight: 90)
-                
-            Text(LocalizedStringKey(self.memberName))
-                .font(.footnote)
-                .lineLimit(1)
+        ZStack {
+            VStack {
+                Image((self.member == nil) ? "default_member" : self.member!.content.member_info.picture_name)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .cornerRadius(5)
+                    .frame(width: 70, height: 70)
+                    
+                Text(LocalizedStringKey(self.memberName))
+                    .font(.footnote)
+                    .lineLimit(1)
+            }
+            
+            if self.member == nil || self.member!.content.member_info.status.contains("元メンバー") {
+                VStack {
+                    HStack(spacing: 5) {
+                        Spacer()
+                        Text(LocalizedStringKey("元"))
+                            .foregroundColor(.white)
+                            .padding(5)
+                            .background(NogiColor.purple)
+                            .clipShape(Circle())
+                            .frame(width: 30, height: 30)
+                        Text("")
+                    }
+                    Spacer()
+                }
+            }
         }
-//        .background(Color.blue)
     }
 }
 
@@ -275,11 +273,9 @@ struct ImageSwiperView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: geometry.size.width * 0.8)
-//                    .frame(width: geometry.size.width * 0.8)
                     .clipped()
                     .cornerRadius(5)
                     .padding(.horizontal)
-//                    .tag(index)
             }
         }
         .frame(width: geometry.size.width)
