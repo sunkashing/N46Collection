@@ -35,23 +35,59 @@ struct SongPageContentView: View {
     
 
     var body: some View {
+        VStack {
+            // MARK: - single section
+            SongSectionView(memberViewModel: self.memberViewModel, vGridLayout: self.$vGridLayout, type: "シングル", cards: self.songViewModel.singleCards)
+            
+            Divider()
+                .padding()
+            
+            // MARK: - download single section
+            SongSectionView(memberViewModel: self.memberViewModel, vGridLayout: self.$vGridLayout, type: "配信シングル", cards: self.songViewModel.downloadSingleCards)
+            
+            Divider()
+                .padding()
+            
+            // MARK: - album section
+            SongSectionView(memberViewModel: self.memberViewModel, vGridLayout: self.$vGridLayout, type: "アルバム", cards: self.songViewModel.albumCards)
+            
+            Divider()
+                .padding()
+            
+            // MARK: - best album section
+            SongSectionView(memberViewModel: self.memberViewModel, vGridLayout: self.$vGridLayout, type: "ベストアルバム", cards: self.songViewModel.bestAlbumCards)
+        }
         
-        // MARK: - single section
+        
+    }
+}
+
+struct SongSectionView: View {
+    @StateObject var memberViewModel: MemberViewModel
+    @Binding var vGridLayout: [GridItem]
+    let type: String
+    var cards: [SongModel.Card]
+    
+
+    var body: some View {
         Section {
             VStack(alignment: .leading) {
                 HStack {
-                    Text(LocalizedStringKey("シングル"))
+                    Text(LocalizedStringKey(self.type))
                         .font(.title2)
                     Spacer()
-                    NavigationLink(LocalizedStringKey("すべて見る"), destination: SingleAllView(songViewModel: self.songViewModel, memberViewModel: self.memberViewModel, vGridLayout: self.$vGridLayout))
+                    NavigationLink(LocalizedStringKey("すべて見る"), destination: SongAllView(memberViewModel: self.memberViewModel, vGridLayout: self.$vGridLayout, cards: self.cards, type: self.type))
                 }
                     .padding(.horizontal)
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
-
-                        ForEach(self.songViewModel.cards[0..<7]) { card in
-                            if card.content.type == "シングル" {
+                        if self.cards.count > 6 {
+                            ForEach(cards[0..<7]) { card in
+                                SongView(card: card, memberViewModel: self.memberViewModel)
+                            }
+                        } else {
+                            ForEach(cards) { card in
                                 SongView(card: card, memberViewModel: self.memberViewModel)
                             }
                         }
@@ -62,28 +98,25 @@ struct SongPageContentView: View {
             }
         }
             .padding(.vertical)
-        
-        Divider()
-            .padding()
-        
-        
     }
 }
 
-struct SingleAllView: View {
-    @StateObject var songViewModel: SongViewModel
+struct SongAllView: View {
     @StateObject var memberViewModel: MemberViewModel
     @Binding var vGridLayout: [GridItem]
+    var cards: [SongModel.Card]
+    let type: String
     
     var body: some View {
         ScrollView {
             LazyVGrid(columns: self.vGridLayout) {
-                ForEach(self.songViewModel.cards) { card in
+                ForEach(self.cards) { card in
                     SongView(card: card, memberViewModel: self.memberViewModel).padding()
                 }
             }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
+            .navigationTitle(LocalizedStringKey(self.type))
     }
 }
 

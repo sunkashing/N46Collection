@@ -48,6 +48,7 @@ struct NogizakaSong: Codable {
     struct Song: Codable {
         let song_name: String
         let song_center: [String]
+        let song_members: [String]
     }
 }
 

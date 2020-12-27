@@ -11,9 +11,215 @@ from requests.adapters import HTTPAdapter
 dir_path = os.path.dirname(os.path.realpath(__file__))
 song_json = []
 num_single = 25
+num_album = 4
+num_download = 2
 
 def get_song_json():
     get_single_json()
+    get_album_json()
+    get_download_json()
+
+    with open('nogizaka_songs.json', 'w') as f:
+        json.dump(song_json, f, indent=4, ensure_ascii=False)
+
+
+def get_download_json():
+    for i in range(num_download):
+        url = 'http://skymotors.boy.jp/n46/cd/download' + str(i + 1).zfill(3) + '.html'
+        req = urllib.request.Request(url, headers={'User-Agent': "Magic Browser"})
+        resp = urllib.request.urlopen(req)
+        html = resp.read()
+        bs = BeautifulSoup(html, "html.parser")
+        single_dict = {}
+        meta = bs.find_all('font')[0].get_text().split("「")
+        year = bs.body.contents[9].split("。")[1]
+        index = year.index("日")
+        year = year[:index + 1]
+        res = re.sub('[^0-9]', '/', year).split('/')
+        res = str(res[0]).zfill(4) + '/' + str(res[1]).zfill(2) + '/' + str(res[2]).zfill(2)
+        single_dict['title'] = meta[1][:-1]
+        print(single_dict['title'])
+        single_dict['type'] = '配信シングル'
+        single_dict['order'] = i + 1
+
+        single_dict['release_date'] = res
+
+        single_dict['cover_name'] = ['d' + str(i + 1).zfill(3) + '_a']
+        single_dict['cover_url'] = []
+
+        for img in bs.find_all('img'):
+            u = img.attrs['src']
+            if '.jpg' in u:
+                cover_url = 'http://skymotors.boy.jp/n46' + u[2:]
+                single_dict['cover_url'].append(cover_url)
+
+                cover_name = u[u.rindex('/') + 1:]
+                single_dict['cover_name'].append(cover_name[:-4])
+
+                cover_path = os.path.join(dir_path, cover_name)
+                # if not download_one_file(cover_url, cover_path):
+                #     continue
+
+        single_dict['center'] = []
+        single_dict['fukujin'] = []
+        single_dict['senbatsu'] = []
+        single_dict['under'] = []
+
+        for member in bs.find_all('table')[1].find_all('tr'):
+            z = member.contents
+            if len(z) == 2:
+                member_name = z[0].get_text()
+                if not z[1].img:
+                    break
+                level = z[1].img.attrs['src']
+                if 'center' in level:
+                    single_dict['center'].append(member_name)
+                elif 'fukujin' in level:
+                    single_dict['fukujin'].append(member_name)
+                elif 'senbatsu' in level:
+                    single_dict['senbatsu'].append(member_name)
+                elif 'under' in level:
+                    single_dict['under'].append(member_name)
+
+        single_dict['songs'] = []
+        for song in bs.find_all('table'):
+            song_dict = {}
+            if 'rules' in song.attrs and song.attrs['rules'] == 'none' and 'border' in song.attrs and song.attrs['border'] == '2':
+                for tr in song.find_all('tr'):
+                    for td in tr.find_all('td'):
+                        if 'width' in td.attrs:
+                            song_dict['song_name'] = td.get_text()
+                            # print(song_dict['song_name'])
+                            break
+                        elif 'colspan' in td.attrs and td.attrs['colspan'] == '5':
+                            song_dict['song_center'] = []
+                            song_dict['song_members'] = []
+
+                            song_center = td.div.contents[0]
+
+                            for ele in td.div.contents:
+                                if '<br/>' in ele:
+                                    continue
+                                # ele = ele.replace('\n', '')
+                                if 'センター' in song_center:
+                                    # print(song_center)
+                                    l = song_center.rindex('：')
+                                    r = song_center.rindex('）')
+                                    song_center = song_center[l + 1:r].split('、')
+                                    song_dict['song_center'] = song_center
+
+                                elif isinstance(ele, str) and ele:
+                                    # print(ele)
+                                    ele = ele.replace('\n', '').split('：')[-1].strip().split('、')
+                                    for e in ele:
+                                        if e and '※' not in e:
+                                            song_dict['song_members'].append(e)
+                
+            if song_dict:
+                single_dict['songs'].append(song_dict)
+        song_json.append(single_dict)
+
+
+def get_album_json():
+    for i in range(num_album + 1):
+        if i == 0:
+            url = 'http://skymotors.boy.jp/n46/cd/album101.html'
+        else:
+            url = 'http://skymotors.boy.jp/n46/cd/album' + str(i).zfill(3) + '.html'
+        req = urllib.request.Request(url, headers={'User-Agent': "Magic Browser"})
+        resp = urllib.request.urlopen(req)
+        html = resp.read()
+        bs = BeautifulSoup(html, "html.parser")
+        single_dict = {}
+        meta = bs.find_all('font')[0].get_text().split("「")
+        year = bs.body.contents[9].split("。")[1]
+        index = year.index("日")
+        year = year[:index + 1]
+        res = re.sub('[^0-9]', '/', year).split('/')
+        res = str(res[0]).zfill(4) + '/' + str(res[1]).zfill(2) + '/' + str(res[2]).zfill(2)
+        single_dict['title'] = meta[1][:-1]
+        print(single_dict['title'])
+        if i == 0:
+            single_dict['type'] = 'ベストアルバム'
+            single_dict['order'] = 1
+        else:
+            single_dict['type'] = 'アルバム'
+            single_dict['order'] = int("".join(filter(str.isdigit, meta[0])))
+
+        single_dict['release_date'] = res
+
+        single_dict['cover_name'] = []
+        single_dict['cover_url'] = []
+
+        for img in bs.find_all('img'):
+            u = img.attrs['src']
+            if '.jpg' in u:
+                cover_url = 'http://skymotors.boy.jp/n46' + u[2:]
+                single_dict['cover_url'].append(cover_url)
+
+                cover_name = u[u.rindex('/') + 1:]
+                single_dict['cover_name'].append(cover_name[:-4])
+
+                cover_path = os.path.join(dir_path, cover_name)
+                # if not download_one_file(cover_url, cover_path):
+                #     continue
+
+        single_dict['center'] = []
+        single_dict['fukujin'] = []
+        single_dict['senbatsu'] = []
+        single_dict['under'] = []
+
+        for member in bs.find_all('table')[1].find_all('tr'):
+            z = member.contents
+            if len(z) == 2:
+                member_name = z[0].get_text()
+                level = z[1].img.attrs['src']
+                if 'center' in level:
+                    single_dict['center'].append(member_name)
+                elif 'fukujin' in level:
+                    single_dict['fukujin'].append(member_name)
+                elif 'senbatsu' in level:
+                    single_dict['senbatsu'].append(member_name)
+                elif 'under' in level:
+                    single_dict['under'].append(member_name)
+
+        single_dict['songs'] = []
+        for song in bs.find_all('table'):
+            song_dict = {}
+            if 'rules' in song.attrs and song.attrs['rules'] == 'none' and 'border' in song.attrs and song.attrs['border'] == '2':
+                for tr in song.find_all('tr'):
+                    for td in tr.find_all('td'):
+                        if 'width' in td.attrs:
+                            song_dict['song_name'] = td.get_text()
+                            # print(song_dict['song_name'])
+                            break
+                        elif 'colspan' in td.attrs and td.attrs['colspan'] == '5':
+                            song_dict['song_center'] = []
+                            song_dict['song_members'] = []
+
+                            song_center = td.div.contents[0]
+
+                            for ele in td.div.contents:
+                                if '<br/>' in ele:
+                                    continue
+                                # ele = ele.replace('\n', '')
+                                if 'センター' in song_center:
+                                    # print(song_center)
+                                    l = song_center.rindex('：')
+                                    r = song_center.rindex('）')
+                                    song_center = song_center[l + 1:r].split('、')
+                                    song_dict['song_center'] = song_center
+
+                                elif isinstance(ele, str) and ele:
+                                    # print(ele)
+                                    ele = ele.replace('\n', '').split('：')[-1].strip().split('、')
+                                    for e in ele:
+                                        if e and '※' not in e:
+                                            song_dict['song_members'].append(e)
+                
+            if song_dict:
+                single_dict['songs'].append(song_dict)
+        song_json.append(single_dict)
 
 
 
@@ -80,7 +286,7 @@ def get_single_json():
                     for td in tr.find_all('td'):
                         if 'width' in td.attrs:
                             song_dict['song_name'] = td.get_text()
-                            print(song_dict['song_name'])
+                            # print(song_dict['song_name'])
                             break
                         elif 'colspan' in td.attrs and td.attrs['colspan'] == '5':
                             song_dict['song_center'] = []
@@ -111,9 +317,6 @@ def get_single_json():
         song_json.append(single_dict)
 
     # song_json.append(single_json)
-
-    with open('nogizaka_songs.json', 'w') as f:
-        json.dump(song_json, f, indent=4, ensure_ascii=False)
 
 
 

@@ -21,6 +21,22 @@ class SongViewModel: ObservableObject {
     var cards: [SongModel.Card] {
         model.displayCards
     }
+    
+    var singleCards: [SongModel.Card] {
+        model.singleCards
+    }
+    
+    var downloadSingleCards: [SongModel.Card] {
+        model.downloadSingleCards
+    }
+    
+    var albumCards: [SongModel.Card] {
+        model.albumCards
+    }
+    
+    var bestAlbumCards: [SongModel.Card] {
+        model.bestAlbumCards
+    }
 
     // MARK: - Intent(s)/
 

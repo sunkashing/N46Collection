@@ -80,15 +80,10 @@
 		A60F43CE24AAB6590085E045 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A6BA5D52249DD4BC008F294C /* FilterView.swift */,
-				A6BA5D54249DD581008F294C /* CardView.swift */,
-				A6EA0FF0249C0436000F1142 /* Cardify.swift */,
-				A6EA0FF2249C18AE000F1142 /* MemberPageView.swift */,
+				C984B6E02596E5DE006AFB1F /* SongPageView */,
+				C984B6DF2596E5B1006AFB1F /* MemberPageView */,
 				A6BA5D58249F4A8F008F294C /* animation.swift */,
 				A694F76A2473EF31006E38B4 /* ContentView.swift */,
-				C9E1160225920CD200295579 /* MemberSearchView.swift */,
-				C984B6CF2594B8E3006AFB1F /* SongPageView.swift */,
-				C984B6DC2594C1B9006AFB1F /* SongView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -156,6 +151,27 @@
 				A694F76F2473EF35006E38B4 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C984B6DF2596E5B1006AFB1F /* MemberPageView */ = {
+			isa = PBXGroup;
+			children = (
+				A6EA0FF2249C18AE000F1142 /* MemberPageView.swift */,
+				A6BA5D52249DD4BC008F294C /* FilterView.swift */,
+				A6BA5D54249DD581008F294C /* CardView.swift */,
+				C9E1160225920CD200295579 /* MemberSearchView.swift */,
+				A6EA0FF0249C0436000F1142 /* Cardify.swift */,
+			);
+			path = MemberPageView;
+			sourceTree = "<group>";
+		};
+		C984B6E02596E5DE006AFB1F /* SongPageView */ = {
+			isa = PBXGroup;
+			children = (
+				C984B6CF2594B8E3006AFB1F /* SongPageView.swift */,
+				C984B6DC2594C1B9006AFB1F /* SongView.swift */,
+			);
+			path = SongPageView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

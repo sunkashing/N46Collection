@@ -16,6 +16,30 @@ struct SongModel {
             !$0.isHidden
         }
     }
+    
+    var singleCards: [Card] {
+        cards.filter {
+            $0.content.type == "シングル"
+        }
+    }
+    
+    var albumCards: [Card] {
+        cards.filter {
+            $0.content.type == "アルバム"
+        }
+    }
+    
+    var bestAlbumCards: [Card] {
+        cards.filter {
+            $0.content.type == "ベストアルバム"
+        }
+    }
+    
+    var downloadSingleCards: [Card] {
+        cards.filter {
+            $0.content.type == "配信シングル"
+        }
+    }
 
 
     mutating func hide(card: Card) {
