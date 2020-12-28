@@ -14,22 +14,20 @@ struct ContentView: View {
     var body: some View {
 
         TabView {
-//            MemberSearchView(view: MemberPageView())
             MemberPageView(memberViewModel: self.memberViewModel)
-//                .ignoresSafeArea()
                 .tabItem {
                     Image(systemName: "person.3")
                         .font(.headline)
                     Text(LocalizedStringKey("メンバー"))
                 }
-            
+
             SongPageView(memberViewModel: self.memberViewModel)
                 .tabItem {
                     Image(systemName: "tv.music.note")
                         .font(.headline)
                     Text(LocalizedStringKey("歌曲"))
                 }
-            
+
             Text("news")
                 .tabItem {
                     Image(systemName: "bell")
@@ -38,6 +36,10 @@ struct ContentView: View {
                 }
         }
         .accentColor(Color(.systemPurple))
+        
+        
+        
+//        SongPlayView(urlString: "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview114/v4/93/87/e7/9387e703-ed13-77a8-760b-4e9100719878/mzaf_12268154826110021361.plus.aac.p.m4a").navigationBarTitle("Music Player")
     }
 }
 

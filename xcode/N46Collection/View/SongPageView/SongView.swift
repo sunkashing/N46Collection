@@ -48,22 +48,21 @@ struct SongDetailView: View {
         GeometryReader { geometry in
             NavigationView {
                 ScrollView(.vertical, showsIndicators: false) {
-                    VStack(spacing: 15) {
-                        ImageSwiperView(card: self.card, geometry: geometry)
-                        VStack(alignment: .center, spacing: 5) {
-                            Text(LocalizedStringKey(self.card.content.title))
-                                .font(.title2)
-                            Text(LocalizedStringKey(self.card.content.release_date))
-                                .font(.headline)
-                                .opacity(0.5)
+                    VStack(spacing: 80) {
+                        VStack {
+                            ImageSwiperView(card: self.card, geometry: geometry)
+                            VStack(alignment: .center, spacing: 5) {
+                                Text(LocalizedStringKey(self.card.content.title))
+                                    .font(.title2)
+                                Text(LocalizedStringKey(self.card.content.release_date))
+                                    .font(.headline)
+                                    .opacity(0.5)
+                            }
                         }
                         
                         // MARK: - position section
-                        Divider()
-                            .padding(.vertical)
+                        
                         SongPositionView(card: self.card, memberViewModel: self.memberViewModel, geometry: geometry)
-                        Divider()
-                            .padding(.vertical)
                         SongListView(card: self.card, memberViewModel: self.memberViewModel, geometry: geometry)
                         
                         
@@ -101,10 +100,10 @@ struct SongListView: View {
 
 
     var body: some View {
-        VStack(alignment: .center) {
+        VStack {
             Text(LocalizedStringKey("収録楽曲"))
                 .font(.title)
-                .padding(.vertical)
+            Divider()
             
             ForEach(self.card.content.songs.indices) { index in
                 VStack(alignment: .leading) {
@@ -126,7 +125,7 @@ struct SongListView: View {
                     .padding()
             }
         }
-            .frame(maxHeight: .infinity)
+//            .frame(maxHeight: .infinity)
     }
 }
 
@@ -140,19 +139,67 @@ struct SongListDetailView: View {
 
     var body: some View {
         ScrollView {
-            VStack {
-                // MARK: - center section
-                SongSinglePositionView(members: self.card.content.songs[index].song_center, memberViewModel: self.memberViewModel, header: "センター", color: NogiColor.center, geometry: self.geometry)
+            Divider()
+                .padding(.vertical)
+                .opacity(0)
+            
+            VStack(spacing: 80) {
                 
-                Divider()
-                    .padding(.horizontal)
+                VStack {
+                    Text(LocalizedStringKey("ポジション"))
+                        .font(.title)
+                    Divider()
+                    
+                    // MARK: - center section
+                    SongSinglePositionView(members: self.card.content.songs[index].song_center, memberViewModel: self.memberViewModel, header: "センター", color: NogiColor.center, geometry: self.geometry)
+                    
+                    Divider()
+                        .padding(.horizontal)
+                    
+                    // MARK: - member section
+                    SongSinglePositionView(members: self.card.content.songs[index].song_members, memberViewModel: self.memberViewModel, header: "メンバー", color: NogiColor.senbatsu, geometry: self.geometry)
+                }
+            
                 
-                // MARK: - member section
-                SongSinglePositionView(members: self.card.content.songs[index].song_members, memberViewModel: self.memberViewModel, header: "メンバー", color: NogiColor.senbatsu, geometry: self.geometry)
+                VStack(spacing: 20) {
                 
+                    Text(LocalizedStringKey("歌詞"))
+                        .font(.title)
+
+                    Divider()
+                    
+                    VStack(alignment: .leading, spacing: 40) {
+                        VStack(alignment: .leading, spacing: 10) {
+                            HStack(spacing: 30) {
+                                Text(LocalizedStringKey("作詞"))
+                                Text(LocalizedStringKey(self.card.content.songs[index].lyricist))
+                            }
+                            
+                            HStack(spacing: 30) {
+                                Text(LocalizedStringKey("作曲"))
+                                Text(LocalizedStringKey(self.card.content.songs[index].composer))
+                            }
+                        }
+                            .font(.title3)
+                        
+                        Text(LocalizedStringKey(self.card.content.songs[index].lyric))
+                            .padding()
+                            .lineSpacing(15)
+                            .frame(width: geometry.size.width * 0.9, alignment: .leading)
+                            .background(Color(.secondarySystemBackground))
+                            .cornerRadius(20)
+                    }
+                }
             }
         }
             .navigationTitle(LocalizedStringKey(self.card.content.songs[index].song_name))
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    if self.card.content.songs[index].sound_url != "" {
+                        SongPlayView(urlString: self.card.content.songs[index].sound_url)
+                    }
+                }
+            }
     }
 }
 
@@ -189,30 +236,35 @@ struct SongPositionView: View {
 
     var body: some View {
         
-        // MARK: - center section
-        SongSinglePositionView(members: self.card.content.center, memberViewModel: self.memberViewModel, header: "センター", color: NogiColor.center, geometry: self.geometry)
-        // MARK: - fukujin section
-        
-        Divider()
-            .padding(.horizontal)
-        
-        SongSinglePositionView(members: self.card.content.fukujin, memberViewModel: self.memberViewModel, header: "福神", color: NogiColor.fukujin, geometry: self.geometry)
-        
-        
-        // MARK: - senbatsu section
-        
-        Divider()
-            .padding(.horizontal)
+        VStack {
+            Text(LocalizedStringKey("ポジション"))
+                .font(.title)
+            Divider()
+            // MARK: - center section
+            SongSinglePositionView(members: self.card.content.center, memberViewModel: self.memberViewModel, header: "センター", color: NogiColor.center, geometry: self.geometry)
+            // MARK: - fukujin section
+            
+            Divider()
+                .padding(.horizontal)
+            
+            SongSinglePositionView(members: self.card.content.fukujin, memberViewModel: self.memberViewModel, header: "福神", color: NogiColor.fukujin, geometry: self.geometry)
+            
+            
+            // MARK: - senbatsu section
+            
+            Divider()
+                .padding(.horizontal)
 
-        SongSinglePositionView(members: self.card.content.senbatsu, memberViewModel: self.memberViewModel, header: "選抜", color: NogiColor.senbatsu, geometry: self.geometry)
+            SongSinglePositionView(members: self.card.content.senbatsu, memberViewModel: self.memberViewModel, header: "選抜", color: NogiColor.senbatsu, geometry: self.geometry)
 
-        
-        // MARK: - under section
-        
-        Divider()
-            .padding(.horizontal)
-        
-        SongSinglePositionView(members: self.card.content.under, memberViewModel: self.memberViewModel, header: "アンダー", color: NogiColor.under, geometry: self.geometry)
+            
+            // MARK: - under section
+            
+            Divider()
+                .padding(.horizontal)
+            
+            SongSinglePositionView(members: self.card.content.under, memberViewModel: self.memberViewModel, header: "アンダー", color: NogiColor.under, geometry: self.geometry)
+        }
 
     }
 }
@@ -223,7 +275,6 @@ struct SongPositionView: View {
 struct MemberPositionView: View {
     var memberName: String
     let member: MemberModel.Card?
-//    @StateObject var memberViewModel: MemberViewModel
 
 
     var body: some View {
@@ -233,10 +284,11 @@ struct MemberPositionView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .cornerRadius(5)
-                    .frame(width: 70, height: 70)
+                    .frame(width: 70)
                     
                 Text(LocalizedStringKey(self.memberName))
-                    .font(.footnote)
+                    .font(.caption)
+                    .frame(width: 70)
                     .lineLimit(1)
             }
             
@@ -245,17 +297,18 @@ struct MemberPositionView: View {
                     HStack(spacing: 5) {
                         Spacer()
                         Text(LocalizedStringKey("元"))
+                            .font(.caption)
                             .foregroundColor(.white)
                             .padding(5)
                             .background(NogiColor.purple)
                             .clipShape(Circle())
-                            .frame(width: 30, height: 30)
-                        Text("")
+                            .frame(width: 20, height: 20)
                     }
                     Spacer()
                 }
             }
         }
+        .frame(width: 70)
     }
 }
 
@@ -279,7 +332,6 @@ struct ImageSwiperView: View {
             }
         }
         .frame(width: geometry.size.width)
-//        .cornerRadius(15)
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
         .animation(.easeOut)
     }

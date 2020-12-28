@@ -32,6 +32,8 @@
 		C984B6DD2594C1B9006AFB1F /* SongView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C984B6DC2594C1B9006AFB1F /* SongView.swift */; };
 		C9E116002591EC3500295579 /* NogiColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E115FF2591EC3500295579 /* NogiColor.swift */; };
 		C9E1160325920CD200295579 /* MemberSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E1160225920CD200295579 /* MemberSearchView.swift */; };
+		C9FA3BC52599EBF600140A70 /* SongPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FA3BC42599EBF600140A70 /* SongPlayView.swift */; };
+		C9FA3BD1259A105800140A70 /* PlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FA3BD0259A105800140A70 /* PlayerViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +66,8 @@
 		C984B6DC2594C1B9006AFB1F /* SongView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongView.swift; sourceTree = "<group>"; };
 		C9E115FF2591EC3500295579 /* NogiColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NogiColor.swift; sourceTree = "<group>"; };
 		C9E1160225920CD200295579 /* MemberSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberSearchView.swift; sourceTree = "<group>"; };
+		C9FA3BC42599EBF600140A70 /* SongPlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongPlayView.swift; sourceTree = "<group>"; };
+		C9FA3BD0259A105800140A70 /* PlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +97,7 @@
 			children = (
 				A60F43C824AAB1E40085E045 /* MemberViewModel.swift */,
 				C984B6D22594BB05006AFB1F /* SongViewModel.swift */,
+				C9FA3BD0259A105800140A70 /* PlayerViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -170,6 +175,7 @@
 			children = (
 				C984B6CF2594B8E3006AFB1F /* SongPageView.swift */,
 				C984B6DC2594C1B9006AFB1F /* SongView.swift */,
+				C9FA3BC42599EBF600140A70 /* SongPlayView.swift */,
 			);
 			path = SongPageView;
 			sourceTree = "<group>";
@@ -262,11 +268,13 @@
 				A6BA5D55249DD581008F294C /* CardView.swift in Sources */,
 				C984B6DD2594C1B9006AFB1F /* SongView.swift in Sources */,
 				C984B6D32594BB05006AFB1F /* SongViewModel.swift in Sources */,
+				C9FA3BD1259A105800140A70 /* PlayerViewModel.swift in Sources */,
 				C9E116002591EC3500295579 /* NogiColor.swift in Sources */,
 				A60F43CB24AAB2900085E045 /* MemberModel.swift in Sources */,
 				A6D789C62480088B00468AB5 /* Array+Identifiable.swift in Sources */,
 				C984B6D02594B8E3006AFB1F /* SongPageView.swift in Sources */,
 				A6BA5D57249EA9F9008F294C /* FilterInfo.swift in Sources */,
+				C9FA3BC52599EBF600140A70 /* SongPlayView.swift in Sources */,
 				A6EA0FF3249C18AE000F1142 /* MemberPageView.swift in Sources */,
 				A6EA0FF1249C0436000F1142 /* Cardify.swift in Sources */,
 			);

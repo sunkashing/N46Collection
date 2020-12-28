@@ -10,17 +10,117 @@ from requests.adapters import HTTPAdapter
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
 song_json = []
+song_detail_json = {}
+song_detail_dict = {}
+
 num_single = 25
 num_album = 4
 num_download = 2
 
 def get_song_json():
+    load_song_detail()
+    # print(song_detail_dict)
     get_single_json()
     get_album_json()
     get_download_json()
+    # get_song_detail()
 
     with open('nogizaka_songs.json', 'w') as f:
         json.dump(song_json, f, indent=4, ensure_ascii=False)
+
+def load_song_detail():
+    global song_detail_dict
+    with open('nogizaka_songs_detail.json') as f:
+        song_detail_dict = json.load(f)
+    # print(song_detail_dict)
+
+
+def get_song_detail():
+
+    url = 'https://j-lyric.net/artist/a0560d3/'
+    req = urllib.request.Request(url, headers={'User-Agent': "Magic Browser"})
+    resp = urllib.request.urlopen(req)
+    html = resp.read()
+    bs = BeautifulSoup(html, "html.parser")
+
+    tmp1 = set()
+    num = 207
+    for i in range(num):
+        tag = bs.find(id='ly' + str(i + 1))
+        title = tag.find_all('p', class_='ttl')[0].a.get_text()
+        if title == '新しい花粉～ミュージカル「見知らぬ世界」より～':
+            title = '新しい花粉 〜ミュージカル「見知らぬ世界」より〜'
+        # print(tag)
+        if title != 'I see...':
+            title = ExchangeChar(title, False)
+        if title == 'ファンタスティック3色パン':
+            title = 'ファンタスティック三色パン'
+
+        song_detail_json[title] = {}
+        info = tag.find_all('p', class_='sml')[0].get_text().split('：')
+        print(title)
+        song_detail_json[title]['lyricist'] = '秋元康'
+        song_detail_json[title]['composer'] = info[2]
+
+        lyric_url = 'https://j-lyric.net/' + tag.find_all('p', class_='ttl')[0].a.attrs['href']
+
+        req = urllib.request.Request(lyric_url, headers={'User-Agent': "Magic Browser"})
+        resp = urllib.request.urlopen(req)
+        html = resp.read()
+        bs1 = BeautifulSoup(html, "html.parser")
+
+        song_detail_json[title]['lyric'] = bs1.find(id='Lyric').get_text("\n")
+        song_detail_json[title]['sound_url'] = ''
+        # print(song_detail_json[title]['lyric'])
+        # break
+
+
+    url = 'https://www.uta-net.com/artist/12550/'
+    req = urllib.request.Request(url, headers={'User-Agent': "Magic Browser"})
+    resp = urllib.request.urlopen(req)
+    html = resp.read()
+    bs = BeautifulSoup(html, "html.parser")
+
+    result_table = bs.find_all('div', class_='result_table')
+    for table in result_table:
+        # print(table.table.tbody.contents)
+        for tr in table.table.tbody.contents:
+            if tr == '\n':
+                continue
+            title = tr.find_all('td')[0].a.get_text()
+
+            url = 'https://www.uta-net.com/' + tr.find_all('td')[0].a.attrs['href']
+            req = urllib.request.Request(url, headers={'User-Agent': "Magic Browser"})
+            resp = urllib.request.urlopen(req)
+            html = resp.read()
+            bs = BeautifulSoup(html, "html.parser")
+
+            sound_url = bs.find(id='sound_uri')
+            if not sound_url:
+                continue
+            sound_url = sound_url.a.attrs['href']
+
+            if title == '夏のFree & Easy':
+                title = '夏のFree&Easy'
+
+            if title == 'ファンタスティック3色パン':
+                title = 'ファンタスティック三色パン'
+
+            if title != 'I see...':
+                title = ExchangeChar(title, False)
+            print(title)
+
+            song_detail_json[title]['sound_url'] = sound_url
+            # print(tr)
+            # print(tr.find_all('td')[0].a.get_text())
+    # print(result_table)
+    # print(len(tmp))
+
+    with open('nogizaka_songs_detail.json', 'w') as f:
+        json.dump(song_detail_json, f, indent=4, ensure_ascii=False)
+
+
+
 
 
 def get_download_json():
@@ -88,7 +188,13 @@ def get_download_json():
                 for tr in song.find_all('tr'):
                     for td in tr.find_all('td'):
                         if 'width' in td.attrs:
-                            song_dict['song_name'] = td.get_text()
+                            title = td.get_text()
+                            song_dict['song_name'] = title
+
+                            song_dict['lyricist'] = song_detail_dict[title]['lyricist']
+                            song_dict['composer'] = song_detail_dict[title]['composer']
+                            song_dict['lyric'] = song_detail_dict[title]['lyric']
+                            song_dict['sound_url'] = song_detail_dict[title]['sound_url']
                             # print(song_dict['song_name'])
                             break
                         elif 'colspan' in td.attrs and td.attrs['colspan'] == '5':
@@ -190,8 +296,22 @@ def get_album_json():
                 for tr in song.find_all('tr'):
                     for td in tr.find_all('td'):
                         if 'width' in td.attrs:
-                            song_dict['song_name'] = td.get_text()
-                            # print(song_dict['song_name'])
+                            title = td.get_text()
+                            song_dict['song_name'] = title
+
+                            song_dict['lyricist'] = ''
+                            song_dict['composer'] = ''
+                            song_dict['lyric'] = ''
+                            song_dict['sound_url'] = ''
+
+                            if title == '自分のこと':
+                                break
+
+                            song_dict['lyricist'] = song_detail_dict[title]['lyricist']
+                            song_dict['composer'] = song_detail_dict[title]['composer']
+                            song_dict['lyric'] = song_detail_dict[title]['lyric']
+                            song_dict['sound_url'] = song_detail_dict[title]['sound_url']
+                            print(song_dict['song_name'])
                             break
                         elif 'colspan' in td.attrs and td.attrs['colspan'] == '5':
                             song_dict['song_center'] = []
@@ -285,8 +405,22 @@ def get_single_json():
                 for tr in song.find_all('tr'):
                     for td in tr.find_all('td'):
                         if 'width' in td.attrs:
-                            song_dict['song_name'] = td.get_text()
-                            # print(song_dict['song_name'])
+                            title = td.get_text()
+                            song_dict['song_name'] = title
+
+                            song_dict['lyricist'] = ''
+                            song_dict['composer'] = ''
+                            song_dict['lyric'] = ''
+                            song_dict['sound_url'] = ''
+                            
+                            if title == 'じゃあね。':
+                                break
+
+                            song_dict['lyricist'] = song_detail_dict[title]['lyricist']
+                            song_dict['composer'] = song_detail_dict[title]['composer']
+                            song_dict['lyric'] = song_detail_dict[title]['lyric']
+                            song_dict['sound_url'] = song_detail_dict[title]['sound_url']
+                            print(song_dict['song_name'])
                             break
                         elif 'colspan' in td.attrs and td.attrs['colspan'] == '5':
                             song_dict['song_center'] = []
@@ -431,6 +565,26 @@ def download_one_file(url, file_path):
         traceback.print_exc()
         return False
     return True
+
+def ExchangeChar(strIn,IsChinese=False):
+
+    ChineseChar=['！','...','？', '～']   #中文标点符号大概是15种
+
+    EnglishChar=['!','…','?', '〜']   #要互换的英文标点符号，与上面的中文列表一 一对应哦
+
+    strIn2=str(strIn)    
+
+    for i in range(0,len(EnglishChar)):
+
+        if IsChinese==True:  #英文换成中文
+
+            strIn2=strIn2.replace(EnglishChar[i],ChineseChar[i])
+
+        else:
+
+            strIn2=strIn2.replace(ChineseChar[i],EnglishChar[i])
+
+    return strIn2
 
 
 if __name__ == "__main__":
